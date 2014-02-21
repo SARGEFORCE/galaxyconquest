@@ -35,6 +35,8 @@
             this.mainMenuSave = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mainMenuQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenuText = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.galaxyImage = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.buttonDraw = new System.Windows.Forms.Button();
@@ -42,8 +44,6 @@
             this.buttonSpinRight = new System.Windows.Forms.Button();
             this.buttonSpinUp = new System.Windows.Forms.Button();
             this.buttonSpinDown = new System.Windows.Forms.Button();
-            this.mainMenuText = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainMenuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyImage)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.toolStripSeparator1,
             this.mainMenuQuit});
             this.mainMenuFile.Name = "mainMenuFile";
-            this.mainMenuFile.Size = new System.Drawing.Size(35, 20);
+            this.mainMenuFile.Size = new System.Drawing.Size(36, 20);
             this.mainMenuFile.Text = "File";
             // 
             // mainMenuNew
@@ -103,6 +103,22 @@
             this.mainMenuQuit.Size = new System.Drawing.Size(152, 22);
             this.mainMenuQuit.Text = "Quit";
             this.mainMenuQuit.Click += new System.EventHandler(this.mainMenuQuit_Click);
+            // 
+            // mainMenuText
+            // 
+            this.mainMenuText.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.mainMenuText.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainMenuAbout});
+            this.mainMenuText.Name = "mainMenuText";
+            this.mainMenuText.Size = new System.Drawing.Size(43, 20);
+            this.mainMenuText.Text = "Help";
+            // 
+            // mainMenuAbout
+            // 
+            this.mainMenuAbout.Name = "mainMenuAbout";
+            this.mainMenuAbout.Size = new System.Drawing.Size(120, 22);
+            this.mainMenuAbout.Text = "About...";
+            this.mainMenuAbout.Click += new System.EventHandler(this.mainMenuAbout_Click);
             // 
             // galaxyImage
             // 
@@ -178,22 +194,6 @@
             this.buttonSpinDown.UseVisualStyleBackColor = true;
             this.buttonSpinDown.Click += new System.EventHandler(this.button1_Click);
             // 
-            // mainMenuText
-            // 
-            this.mainMenuText.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.mainMenuText.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainMenuAbout});
-            this.mainMenuText.Name = "mainMenuText";
-            this.mainMenuText.Size = new System.Drawing.Size(40, 20);
-            this.mainMenuText.Text = "Help";
-            // 
-            // mainMenuAbout
-            // 
-            this.mainMenuAbout.Name = "mainMenuAbout";
-            this.mainMenuAbout.Size = new System.Drawing.Size(152, 22);
-            this.mainMenuAbout.Text = "About...";
-            this.mainMenuAbout.Click += new System.EventHandler(this.mainMenuAbout_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +210,7 @@
             this.MainMenuStrip = this.mainMenu;
             this.Name = "Form1";
             this.Text = "GalaxyConquest";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyImage)).EndInit();

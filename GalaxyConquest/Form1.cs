@@ -35,15 +35,18 @@ namespace GalaxyConquest
 
         private void mainMenuNew_Click(object sender, EventArgs e)
         {
-            //TODO: сделать выбор типа галактики
-            galaxy = new ModelGalaxy();
-            galaxy.name = "Млечный путь";
+            Form_NewGameDialog nd = new Form_NewGameDialog();
+            if (nd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                galaxy = new ModelGalaxy();
+                galaxy.name = "Млечный путь";
 
-            generate_map(true);
-            generate_map(false);
+                generate_map(true);
+                generate_map(false);
 
+            }
 
-
+#region someoldcode
             /*
             Random r = new Random();
 
@@ -143,6 +146,7 @@ namespace GalaxyConquest
 
             galaxy.lanes.Add(w);
              */
+#endregion
         }
 
         private void buttonDraw_Click(object sender, EventArgs e)
