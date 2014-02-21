@@ -12,6 +12,7 @@ namespace GalaxyConquest
     public partial class Form_NewGameDialog : Form
     {
         int galaxytype = 0;
+        int galaxysize = 0;
 
         public Form_NewGameDialog()
         {
@@ -49,5 +50,37 @@ namespace GalaxyConquest
                 galaxytype = 0;
             }
         }
+
+        private void buttonGalaxySizeLeft_Click(object sender, EventArgs e)
+        {
+            if (galaxysize == 0)
+            {
+                return;
+            }
+            else
+            {
+                galaxysize -= 1;
+                labelGalaxySize.Text = galaxysize.ToString();
+            }
+        }
+
+        private void buttonGalaxySizeRight_Click(object sender, EventArgs e)
+        {
+            if (galaxysize == 5)
+            {
+                return;
+            }
+            else
+            {
+                galaxysize += 1;
+                labelGalaxySize.Text = galaxysize.ToString();
+            }
+        }
+
+        public int getGalaxySize()
+        {
+            return (galaxysize);
+        }
+
     }
 }

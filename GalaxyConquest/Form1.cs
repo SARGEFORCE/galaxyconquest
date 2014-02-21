@@ -41,8 +41,8 @@ namespace GalaxyConquest
                 galaxy = new ModelGalaxy();
                 galaxy.name = "Млечный путь";
 
-                generate_map(true);
-                generate_map(false);
+                generate_map(true, nd.getGalaxySize());
+                generate_map(false, nd.getGalaxySize());
 
             }
 
@@ -170,7 +170,7 @@ namespace GalaxyConquest
         {
             if (galaxy == null)
             {
-                MessageBox.Show("Error occured :`(", "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("Error occured :`(\n\n'Nothing to draw'", "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
 
@@ -303,7 +303,7 @@ namespace GalaxyConquest
             af.ShowDialog();
         }
 
-        public void generate_map(bool rotate)
+        public void generate_map(bool rotate, int galaxysize)
         {
             Double x;
             Double y;
@@ -311,19 +311,17 @@ namespace GalaxyConquest
             Double t;
             Double z = 0;
             Double curve = 0;
-            float radius = 0;
             Random rand = new Random();
 
-            for (int j = 0; j < 50; j++)
+            for (int j = 0; j < 30 * (galaxysize + 1); j++)
             {
                 r = 0;
                 t = 0;
                 for (int i = 0; i < 40; i++)
                 {
-                    r += rand.Next(4) + 3;
+                    r += rand.Next(4) + 2 + galaxysize;
                     curve = Math.Pow((r - 4), 2);
                     curve = curve / 150;
-                    //curve = r;
                     t += 0.2;
                     z = t + (rand.NextDouble() - 0.5) * 2;
                     x = curve * Math.Cos(z) + rand.Next(30) - 15;
@@ -341,13 +339,6 @@ namespace GalaxyConquest
                     s.z = y;
                     s.name = "";
                     galaxy.stars.Add(s);
-                        
-                    //MessageBox.Show(t.ToString(), "My Application",MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
-                    //x = r * Math.Cos(t);
-                    //y = r * Math.Sin(t);
-                    //radius = rand.Next(5);
-                    //SolidBrush whiteBrush = new SolidBrush(Color.White);
-                    //e.Graphics.FillEllipse(whiteBrush, (int)x + 300, (int)y + 300, radius, radius);
                 }
             }
         }

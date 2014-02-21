@@ -44,9 +44,9 @@
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.labelGalaxySize = new System.Windows.Forms.Label();
+            this.buttonGalaxySizeRight = new System.Windows.Forms.Button();
+            this.buttonGalaxySizeLeft = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.labelGalaxyType = new System.Windows.Forms.Label();
@@ -65,9 +65,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button8);
@@ -83,9 +83,9 @@
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.labelGalaxySize);
+            this.groupBox1.Controls.Add(this.buttonGalaxySizeRight);
+            this.groupBox1.Controls.Add(this.buttonGalaxySizeLeft);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.labelGalaxyType);
@@ -239,33 +239,35 @@
             this.label6.Text = "Difficulty";
             this.label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // label3
+            // labelGalaxySize
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(196, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Normal";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelGalaxySize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelGalaxySize.Location = new System.Drawing.Point(196, 107);
+            this.labelGalaxySize.Name = "labelGalaxySize";
+            this.labelGalaxySize.Size = new System.Drawing.Size(65, 13);
+            this.labelGalaxySize.TabIndex = 9;
+            this.labelGalaxySize.Text = "0";
+            this.labelGalaxySize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button3
+            // buttonGalaxySizeRight
             // 
-            this.button3.Image = global::GalaxyConquest.Properties.Resources.btn_arrowright;
-            this.button3.Location = new System.Drawing.Point(230, 123);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(31, 23);
-            this.button3.TabIndex = 8;
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonGalaxySizeRight.Image = global::GalaxyConquest.Properties.Resources.btn_arrowright;
+            this.buttonGalaxySizeRight.Location = new System.Drawing.Point(230, 123);
+            this.buttonGalaxySizeRight.Name = "buttonGalaxySizeRight";
+            this.buttonGalaxySizeRight.Size = new System.Drawing.Size(31, 23);
+            this.buttonGalaxySizeRight.TabIndex = 8;
+            this.buttonGalaxySizeRight.UseVisualStyleBackColor = true;
+            this.buttonGalaxySizeRight.Click += new System.EventHandler(this.buttonGalaxySizeRight_Click);
             // 
-            // button4
+            // buttonGalaxySizeLeft
             // 
-            this.button4.Image = global::GalaxyConquest.Properties.Resources.btn_arrowleft;
-            this.button4.Location = new System.Drawing.Point(197, 123);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 23);
-            this.button4.TabIndex = 7;
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonGalaxySizeLeft.Image = global::GalaxyConquest.Properties.Resources.btn_arrowleft;
+            this.buttonGalaxySizeLeft.Location = new System.Drawing.Point(197, 123);
+            this.buttonGalaxySizeLeft.Name = "buttonGalaxySizeLeft";
+            this.buttonGalaxySizeLeft.Size = new System.Drawing.Size(31, 23);
+            this.buttonGalaxySizeLeft.TabIndex = 7;
+            this.buttonGalaxySizeLeft.UseVisualStyleBackColor = true;
+            this.buttonGalaxySizeLeft.Click += new System.EventHandler(this.buttonGalaxySizeLeft_Click);
             // 
             // pictureBox2
             // 
@@ -402,9 +404,9 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label labelGalaxySize;
+        private System.Windows.Forms.Button buttonGalaxySizeRight;
+        private System.Windows.Forms.Button buttonGalaxySizeLeft;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelGalaxyType;
