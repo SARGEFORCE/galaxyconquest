@@ -168,6 +168,12 @@ namespace GalaxyConquest
 
         public void Redraw()
         {
+            if (galaxy == null)
+            {
+                MessageBox.Show("Error occured :`(", "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
+
             galaxyBitmap = new Bitmap(galaxyImage.Width, galaxyImage.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
             Graphics g = Graphics.FromImage(galaxyBitmap);
