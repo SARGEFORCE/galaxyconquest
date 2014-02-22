@@ -339,13 +339,64 @@ namespace GalaxyConquest
                     s.x = x;
                     s.y = -5.0 + rand.NextDouble() * 10.0;
                     s.z = y;
-                    s.type = rand.Next(7);  //type impact on size
+                    s.type = rand.Next(7);  //type impact on size and color
                     s.name = "";
                     //RGB color with alfa
                     s.color_A = rand.Next(200) + 55;
-                    s.color_R = rand.Next(255);
-                    s.color_G = rand.Next(255);
-                    s.color_B = rand.Next(255);
+                    switch (s.type)
+                    {
+                        //O - Blue, t =30 000 — 60 000 K
+                        case 0:
+                            s.color_R = 123;
+                            s.color_G = 104;
+                            s.color_B = 238;
+                        break;
+
+                        //B - Light blue, t = 10 500 — 30 000 K
+                        case 1:
+                            s.color_A = 180;
+                            s.color_R = 135;
+                            s.color_G = 206;
+                            s.color_B = 235;
+                        break;
+
+                        //A - White, t = 7500—10 000 K
+                        case 2:
+                            s.color_R = 255;
+                            s.color_G = 250;
+                            s.color_B = 240;
+                        break;
+
+                        //F - Light Yellow, t = 6000—7200 K
+                        case 3:
+                            s.color_A = 180;
+                            s.color_R = 255;
+                            s.color_G = 255;
+                            s.color_B = 0;
+                        break;
+
+                        //G - Yellow, t = 5500 — 6000 K
+                        case 4:
+                            s.color_R = 255;
+                            s.color_G = 255;
+                            s.color_B = 0;
+                        break;
+
+                        //K - Orange, t = 4000 — 5250 K
+                        case 5:
+                            s.color_R = 255;
+                            s.color_G = 140;
+                            s.color_B = 0;
+                        break;
+
+                        //M - Red, t = 2600 — 3850 K
+                        case 6:
+                            s.color_R = 255;
+                            s.color_G = 0;
+                            s.color_B = 0;
+                        break;
+
+                    }
 
                     galaxy.stars.Add(s);
                 }
