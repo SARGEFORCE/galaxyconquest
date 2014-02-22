@@ -10,8 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-
-using System.Drawing;
+using System.Media;
 
 namespace GalaxyConquest
 {
@@ -186,7 +185,7 @@ namespace GalaxyConquest
             int centerX = galaxyBitmap.Width / 2;
             int centerY = galaxyBitmap.Height / 2;
 
-            int starSize = 7;
+            int starSize = 0;
 
 
 
@@ -211,9 +210,12 @@ namespace GalaxyConquest
                 screenX = tX;
                 screenY = tY;
 
+                starSize = s.type + 4;
 
-
-                g.FillEllipse(Brushes.Yellow, centerX + (int)screenX - starSize / 2, centerY + (int)screenY - starSize / 2, starSize, starSize);
+                //create new brush with color from alfa and RGB
+                SolidBrush br = new SolidBrush(Color.FromArgb(s.color_A, s.color_R, s.color_G, s.color_B));
+                
+                g.FillEllipse(br, centerX + (int)screenX - starSize / 2, centerY + (int)screenY - starSize / 2, starSize, starSize);
                 g.DrawString(s.name, new Font("Arial", 8.0F), Brushes.White, new PointF(centerX + (int)screenX, centerY + (int)screenY));
             }
 
@@ -337,7 +339,14 @@ namespace GalaxyConquest
                     s.x = x;
                     s.y = -5.0 + rand.NextDouble() * 10.0;
                     s.z = y;
+                    s.type = rand.Next(7);  //type impact on size
                     s.name = "";
+                    //RGB color with alfa
+                    s.color_A = rand.Next(200) + 55;
+                    s.color_R = rand.Next(255);
+                    s.color_G = rand.Next(255);
+                    s.color_B = rand.Next(255);
+
                     galaxy.stars.Add(s);
                 }
             }

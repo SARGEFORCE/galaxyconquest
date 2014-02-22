@@ -15,5 +15,10 @@ namespace GalaxyConquest
         public double x;
         public double y;
         public double z;
+        public int color_A; //alfa
+        public int color_R; //red
+        public int color_G; //green
+        public int color_B; //blue
+
     }
 }
