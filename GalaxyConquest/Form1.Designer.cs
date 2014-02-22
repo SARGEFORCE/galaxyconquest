@@ -44,6 +44,8 @@
             this.buttonSpinRight = new System.Windows.Forms.Button();
             this.buttonSpinUp = new System.Windows.Forms.Button();
             this.buttonSpinDown = new System.Windows.Forms.Button();
+            this.buttonScalingUp = new System.Windows.Forms.Button();
+            this.buttonScalingDown = new System.Windows.Forms.Button();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyImage)).BeginInit();
             this.SuspendLayout();
@@ -68,39 +70,39 @@
             this.toolStripSeparator1,
             this.mainMenuQuit});
             this.mainMenuFile.Name = "mainMenuFile";
-            this.mainMenuFile.Size = new System.Drawing.Size(36, 20);
+            this.mainMenuFile.Size = new System.Drawing.Size(35, 20);
             this.mainMenuFile.Text = "File";
             // 
             // mainMenuNew
             // 
             this.mainMenuNew.Name = "mainMenuNew";
-            this.mainMenuNew.Size = new System.Drawing.Size(152, 22);
+            this.mainMenuNew.Size = new System.Drawing.Size(112, 22);
             this.mainMenuNew.Text = "New";
             this.mainMenuNew.Click += new System.EventHandler(this.mainMenuNew_Click);
             // 
             // mainMenuOpen
             // 
             this.mainMenuOpen.Name = "mainMenuOpen";
-            this.mainMenuOpen.Size = new System.Drawing.Size(152, 22);
+            this.mainMenuOpen.Size = new System.Drawing.Size(112, 22);
             this.mainMenuOpen.Text = "Open...";
             this.mainMenuOpen.Click += new System.EventHandler(this.mainMenuOpen_Click);
             // 
             // mainMenuSave
             // 
             this.mainMenuSave.Name = "mainMenuSave";
-            this.mainMenuSave.Size = new System.Drawing.Size(152, 22);
+            this.mainMenuSave.Size = new System.Drawing.Size(112, 22);
             this.mainMenuSave.Text = "Save...";
             this.mainMenuSave.Click += new System.EventHandler(this.mainMenuSave_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(109, 6);
             // 
             // mainMenuQuit
             // 
             this.mainMenuQuit.Name = "mainMenuQuit";
-            this.mainMenuQuit.Size = new System.Drawing.Size(152, 22);
+            this.mainMenuQuit.Size = new System.Drawing.Size(112, 22);
             this.mainMenuQuit.Text = "Quit";
             this.mainMenuQuit.Click += new System.EventHandler(this.mainMenuQuit_Click);
             // 
@@ -110,21 +112,21 @@
             this.mainMenuText.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenuAbout});
             this.mainMenuText.Name = "mainMenuText";
-            this.mainMenuText.Size = new System.Drawing.Size(43, 20);
+            this.mainMenuText.Size = new System.Drawing.Size(40, 20);
             this.mainMenuText.Text = "Help";
             // 
             // mainMenuAbout
             // 
             this.mainMenuAbout.Name = "mainMenuAbout";
-            this.mainMenuAbout.Size = new System.Drawing.Size(120, 22);
+            this.mainMenuAbout.Size = new System.Drawing.Size(115, 22);
             this.mainMenuAbout.Text = "About...";
             this.mainMenuAbout.Click += new System.EventHandler(this.mainMenuAbout_Click);
             // 
             // galaxyImage
             // 
-            this.galaxyImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.galaxyImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.galaxyImage.BackColor = System.Drawing.Color.Black;
             this.galaxyImage.Location = new System.Drawing.Point(140, 27);
             this.galaxyImage.Name = "galaxyImage";
@@ -194,11 +196,33 @@
             this.buttonSpinDown.UseVisualStyleBackColor = true;
             this.buttonSpinDown.Click += new System.EventHandler(this.button1_Click);
             // 
+            // buttonScalingUp
+            // 
+            this.buttonScalingUp.Location = new System.Drawing.Point(29, 207);
+            this.buttonScalingUp.Name = "buttonScalingUp";
+            this.buttonScalingUp.Size = new System.Drawing.Size(75, 23);
+            this.buttonScalingUp.TabIndex = 8;
+            this.buttonScalingUp.Text = "+";
+            this.buttonScalingUp.UseVisualStyleBackColor = true;
+            this.buttonScalingUp.Click += new System.EventHandler(this.buttonScalingUp_Click);
+            // 
+            // buttonScalingDown
+            // 
+            this.buttonScalingDown.Location = new System.Drawing.Point(29, 236);
+            this.buttonScalingDown.Name = "buttonScalingDown";
+            this.buttonScalingDown.Size = new System.Drawing.Size(75, 23);
+            this.buttonScalingDown.TabIndex = 9;
+            this.buttonScalingDown.Text = "-";
+            this.buttonScalingDown.UseVisualStyleBackColor = true;
+            this.buttonScalingDown.Click += new System.EventHandler(this.buttonScalingDown_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 338);
+            this.Controls.Add(this.buttonScalingDown);
+            this.Controls.Add(this.buttonScalingUp);
             this.Controls.Add(this.buttonSpinDown);
             this.Controls.Add(this.buttonSpinUp);
             this.Controls.Add(this.buttonSpinRight);
@@ -237,6 +261,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem mainMenuText;
         private System.Windows.Forms.ToolStripMenuItem mainMenuAbout;
+        private System.Windows.Forms.Button buttonScalingUp;
+        private System.Windows.Forms.Button buttonScalingDown;
     }
 }
 

@@ -22,6 +22,8 @@ namespace GalaxyConquest
         public double spinX = 0.0;
         public double spinY = 0.0;
 
+        public double scaling = 0.5;
+
         public Form1()
         {
             InitializeComponent();
@@ -165,6 +167,34 @@ namespace GalaxyConquest
             Redraw();
         }
 
+
+        private void buttonScalingUp_Click(object sender, EventArgs e)
+        {
+            if (scaling >= 10)
+            {
+                return;
+            }
+
+            else
+            {
+                scaling += 0.5;
+                Redraw();
+            }
+        }
+
+        private void buttonScalingDown_Click(object sender, EventArgs e)
+        {
+            if (scaling <= 0.5)
+            {
+                return;
+            }
+            else
+            {
+                scaling -= 0.5;
+                Redraw();
+            }
+        }
+
         public void Redraw()
         {
             if (galaxy == null)
@@ -211,6 +241,10 @@ namespace GalaxyConquest
                 screenY = tY;
 
                 starSize = s.type + 4;
+
+                screenX *= scaling;
+                screenY *= scaling;
+                starSize += (int)scaling * 4;
 
                 //create new brush with color from alfa and RGB
                 SolidBrush br = new SolidBrush(Color.FromArgb(s.color_A, s.color_R, s.color_G, s.color_B));
@@ -402,5 +436,7 @@ namespace GalaxyConquest
                 }
             }
         }
+
+        
     }
 }
