@@ -22,7 +22,7 @@ namespace GalaxyConquest
         public double spinX = 0.0;
         public double spinY = 0.0;
 
-        public double scaling = 0.5;
+        public float scaling = 1f;
 
         public Form1()
         {
@@ -177,20 +177,20 @@ namespace GalaxyConquest
 
             else
             {
-                scaling += 0.5;
+                scaling += 1f;
                 Redraw();
             }
         }
 
         private void buttonScalingDown_Click(object sender, EventArgs e)
         {
-            if (scaling <= 0.5)
+            if (scaling <= 1)
             {
                 return;
             }
             else
             {
-                scaling -= 0.5;
+                scaling -= 1f;
                 Redraw();
             }
         }
@@ -206,14 +206,20 @@ namespace GalaxyConquest
             galaxyBitmap = new Bitmap(galaxyImage.Width, galaxyImage.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
             Graphics g = Graphics.FromImage(galaxyBitmap);
+            
 
+            
+            g.ScaleTransform(scaling, scaling);
+            
             g.FillRectangle(Brushes.Black, 0, 0, galaxyBitmap.Width, galaxyBitmap.Height);
 
-
+            
             g.DrawString(galaxy.name, new Font("Arial", 10.0F), Brushes.White, new PointF(1.0F, 1.0F));
 
-            int centerX = galaxyBitmap.Width / 2;
-            int centerY = galaxyBitmap.Height / 2;
+
+
+            int centerX = galaxyBitmap.Width / 2 / (int)scaling;
+            int centerY = galaxyBitmap.Height / 2 / (int)scaling;
 
             int starSize = 0;
 
@@ -241,16 +247,15 @@ namespace GalaxyConquest
                 screenY = tY;
 
                 starSize = s.type + 4;
-
-                screenX *= scaling;
-                screenY *= scaling;
-                starSize += (int)scaling * 4;
+                
+               
 
                 //create new brush with color from alfa and RGB
                 SolidBrush br = new SolidBrush(Color.FromArgb(s.color_A, s.color_R, s.color_G, s.color_B));
                 
                 g.FillEllipse(br, centerX + (int)screenX - starSize / 2, centerY + (int)screenY - starSize / 2, starSize, starSize);
                 g.DrawString(s.name, new Font("Arial", 8.0F), Brushes.White, new PointF(centerX + (int)screenX, centerY + (int)screenY));
+                
             }
 
 
