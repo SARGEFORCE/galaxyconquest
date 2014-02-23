@@ -23,6 +23,8 @@ namespace GalaxyConquest
         public double spinY = 0.0;
 
         public float scaling = 1f;
+        public int horizontal = 0;
+        public int vertical = 0;
 
         public Form1()
         {
@@ -195,6 +197,32 @@ namespace GalaxyConquest
             }
         }
 
+
+        private void buttonMoveRight_Click(object sender, EventArgs e)
+        {
+            horizontal += 5;
+            Redraw();
+        }
+
+        private void buttonMoveLeft_Click(object sender, EventArgs e)
+        {
+            horizontal -= 5;
+            Redraw();
+        }
+
+        private void buttonMoveUp_Click(object sender, EventArgs e)
+        {
+            vertical -= 5;
+            Redraw();
+        }
+
+        private void buttonMoveDown_Click(object sender, EventArgs e)
+        {
+            vertical += 5;
+            Redraw();
+        }
+
+
         public void Redraw()
         {
             if (galaxy == null)
@@ -220,6 +248,9 @@ namespace GalaxyConquest
 
             int centerX = galaxyBitmap.Width / 2 / (int)scaling;
             int centerY = galaxyBitmap.Height / 2 / (int)scaling;
+
+            centerX += horizontal;
+            centerY += vertical;
 
             int starSize = 0;
 
@@ -441,6 +472,8 @@ namespace GalaxyConquest
                 }
             }
         }
+
+        
 
         
     }

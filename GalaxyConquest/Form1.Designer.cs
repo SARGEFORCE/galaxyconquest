@@ -46,6 +46,10 @@
             this.buttonSpinDown = new System.Windows.Forms.Button();
             this.buttonScalingUp = new System.Windows.Forms.Button();
             this.buttonScalingDown = new System.Windows.Forms.Button();
+            this.buttonMoveUp = new System.Windows.Forms.Button();
+            this.buttonMoveLeft = new System.Windows.Forms.Button();
+            this.buttonMoveRight = new System.Windows.Forms.Button();
+            this.buttonMoveDown = new System.Windows.Forms.Button();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyImage)).BeginInit();
             this.SuspendLayout();
@@ -216,11 +220,55 @@
             this.buttonScalingDown.UseVisualStyleBackColor = true;
             this.buttonScalingDown.Click += new System.EventHandler(this.buttonScalingDown_Click);
             // 
+            // buttonMoveUp
+            // 
+            this.buttonMoveUp.Location = new System.Drawing.Point(29, 106);
+            this.buttonMoveUp.Name = "buttonMoveUp";
+            this.buttonMoveUp.Size = new System.Drawing.Size(75, 23);
+            this.buttonMoveUp.TabIndex = 10;
+            this.buttonMoveUp.Text = "up";
+            this.buttonMoveUp.UseVisualStyleBackColor = true;
+            this.buttonMoveUp.Click += new System.EventHandler(this.buttonMoveUp_Click);
+            // 
+            // buttonMoveLeft
+            // 
+            this.buttonMoveLeft.Location = new System.Drawing.Point(0, 135);
+            this.buttonMoveLeft.Name = "buttonMoveLeft";
+            this.buttonMoveLeft.Size = new System.Drawing.Size(75, 23);
+            this.buttonMoveLeft.TabIndex = 11;
+            this.buttonMoveLeft.Text = "left";
+            this.buttonMoveLeft.UseVisualStyleBackColor = true;
+            this.buttonMoveLeft.Click += new System.EventHandler(this.buttonMoveLeft_Click);
+            // 
+            // buttonMoveRight
+            // 
+            this.buttonMoveRight.Location = new System.Drawing.Point(81, 135);
+            this.buttonMoveRight.Name = "buttonMoveRight";
+            this.buttonMoveRight.Size = new System.Drawing.Size(75, 23);
+            this.buttonMoveRight.TabIndex = 12;
+            this.buttonMoveRight.Text = "right";
+            this.buttonMoveRight.UseVisualStyleBackColor = true;
+            this.buttonMoveRight.Click += new System.EventHandler(this.buttonMoveRight_Click);
+            // 
+            // buttonMoveDown
+            // 
+            this.buttonMoveDown.Location = new System.Drawing.Point(29, 166);
+            this.buttonMoveDown.Name = "buttonMoveDown";
+            this.buttonMoveDown.Size = new System.Drawing.Size(75, 23);
+            this.buttonMoveDown.TabIndex = 13;
+            this.buttonMoveDown.Text = "down";
+            this.buttonMoveDown.UseVisualStyleBackColor = true;
+            this.buttonMoveDown.Click += new System.EventHandler(this.buttonMoveDown_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 338);
+            this.Controls.Add(this.buttonMoveDown);
+            this.Controls.Add(this.buttonMoveRight);
+            this.Controls.Add(this.buttonMoveLeft);
+            this.Controls.Add(this.buttonMoveUp);
             this.Controls.Add(this.buttonScalingDown);
             this.Controls.Add(this.buttonScalingUp);
             this.Controls.Add(this.buttonSpinDown);
@@ -263,6 +311,10 @@
         private System.Windows.Forms.ToolStripMenuItem mainMenuAbout;
         private System.Windows.Forms.Button buttonScalingUp;
         private System.Windows.Forms.Button buttonScalingDown;
+        private System.Windows.Forms.Button buttonMoveUp;
+        private System.Windows.Forms.Button buttonMoveLeft;
+        private System.Windows.Forms.Button buttonMoveRight;
+        private System.Windows.Forms.Button buttonMoveDown;
     }
 }
 
