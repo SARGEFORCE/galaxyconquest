@@ -137,6 +137,8 @@
             this.galaxyImage.Size = new System.Drawing.Size(311, 263);
             this.galaxyImage.TabIndex = 1;
             this.galaxyImage.TabStop = false;
+            this.galaxyImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseDown);
+            this.galaxyImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseMove);
             // 
             // statusStrip1
             // 

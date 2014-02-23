@@ -26,6 +26,9 @@ namespace GalaxyConquest
         public int horizontal = 0;
         public int vertical = 0;
 
+        public int mouseX;
+        public int mouseY;
+
         public Form1()
         {
             InitializeComponent();
@@ -470,6 +473,44 @@ namespace GalaxyConquest
 
                     galaxy.stars.Add(s);
                 }
+            }
+        }
+
+        private void galaxyImage_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseX = e.X;
+            mouseY = e.Y;
+            
+
+        }
+
+        private void galaxyImage_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            
+
+            if (e.Button == MouseButtons.Left)
+            {
+                int dx = mouseX - e.X;
+                int dy = mouseY - e.Y;
+                if (dx > 0)
+                {
+                    horizontal -= 3;
+                }
+                if (dx < 0)
+                {
+                    horizontal += 3;
+                }
+                if (dy > 0)
+                {
+                    vertical -= 3;
+                }
+                if (dy < 0)
+                {
+                    vertical += 3;
+                }
+
+                Redraw();
             }
         }
 
