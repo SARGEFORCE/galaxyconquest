@@ -175,20 +175,20 @@ namespace GalaxyConquest
 
             else
             {
-                scaling += 1f;
+                scaling += 0.2f;
                 Redraw();
             }
         }
 
         private void buttonScalingDown_Click(object sender, EventArgs e)
         {
-            if (scaling <= 1)
+            if (scaling <= 0.4)
             {
                 return;
             }
             else
             {
-                scaling -= 1f;
+                scaling -= 0.2f;
                 Redraw();
             }
         }
@@ -242,8 +242,8 @@ namespace GalaxyConquest
 
 
 
-            int centerX = galaxyBitmap.Width / 2 / (int)scaling;
-            int centerY = galaxyBitmap.Height / 2 / (int)scaling;
+            float centerX = galaxyBitmap.Width / 2 / scaling;
+            float centerY = galaxyBitmap.Height / 2 / scaling;
 
             centerX += horizontal;
             centerY += vertical;
@@ -302,8 +302,8 @@ namespace GalaxyConquest
                 StarWarp w = galaxy.lanes[i];
 
                 g.DrawLine(Pens.Gray,
-                    new Point((centerX + (int)w.system1.x), (centerY + (int)w.system1.y)),
-                    new Point((centerX + (int)w.system2.x), (centerY + (int)w.system2.y)));
+                    new Point(((int)centerX + (int)w.system1.x), ((int)centerY + (int)w.system1.y)),
+                    new Point(((int)centerX + (int)w.system2.x), ((int)centerY + (int)w.system2.y)));
             }
 
             galaxyImage.Image = galaxyBitmap;
