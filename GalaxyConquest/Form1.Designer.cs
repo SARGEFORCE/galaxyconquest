@@ -50,6 +50,7 @@
             this.buttonMoveLeft = new System.Windows.Forms.Button();
             this.buttonMoveRight = new System.Windows.Forms.Button();
             this.buttonMoveDown = new System.Windows.Forms.Button();
+            this.MainMenuTechTree = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyImage)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,8 @@
             // 
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenuFile,
-            this.mainMenuText});
+            this.mainMenuText,
+            this.MainMenuTechTree});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(483, 24);
@@ -80,33 +82,33 @@
             // mainMenuNew
             // 
             this.mainMenuNew.Name = "mainMenuNew";
-            this.mainMenuNew.Size = new System.Drawing.Size(112, 22);
+            this.mainMenuNew.Size = new System.Drawing.Size(152, 22);
             this.mainMenuNew.Text = "New";
             this.mainMenuNew.Click += new System.EventHandler(this.mainMenuNew_Click);
             // 
             // mainMenuOpen
             // 
             this.mainMenuOpen.Name = "mainMenuOpen";
-            this.mainMenuOpen.Size = new System.Drawing.Size(112, 22);
+            this.mainMenuOpen.Size = new System.Drawing.Size(152, 22);
             this.mainMenuOpen.Text = "Open...";
             this.mainMenuOpen.Click += new System.EventHandler(this.mainMenuOpen_Click);
             // 
             // mainMenuSave
             // 
             this.mainMenuSave.Name = "mainMenuSave";
-            this.mainMenuSave.Size = new System.Drawing.Size(112, 22);
+            this.mainMenuSave.Size = new System.Drawing.Size(152, 22);
             this.mainMenuSave.Text = "Save...";
             this.mainMenuSave.Click += new System.EventHandler(this.mainMenuSave_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(109, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // mainMenuQuit
             // 
             this.mainMenuQuit.Name = "mainMenuQuit";
-            this.mainMenuQuit.Size = new System.Drawing.Size(112, 22);
+            this.mainMenuQuit.Size = new System.Drawing.Size(152, 22);
             this.mainMenuQuit.Text = "Quit";
             this.mainMenuQuit.Click += new System.EventHandler(this.mainMenuQuit_Click);
             // 
@@ -122,7 +124,7 @@
             // mainMenuAbout
             // 
             this.mainMenuAbout.Name = "mainMenuAbout";
-            this.mainMenuAbout.Size = new System.Drawing.Size(115, 22);
+            this.mainMenuAbout.Size = new System.Drawing.Size(152, 22);
             this.mainMenuAbout.Text = "About...";
             this.mainMenuAbout.Click += new System.EventHandler(this.mainMenuAbout_Click);
             // 
@@ -262,6 +264,13 @@
             this.buttonMoveDown.UseVisualStyleBackColor = true;
             this.buttonMoveDown.Click += new System.EventHandler(this.buttonMoveDown_Click);
             // 
+            // MainMenuTechTree
+            // 
+            this.MainMenuTechTree.Name = "MainMenuTechTree";
+            this.MainMenuTechTree.Size = new System.Drawing.Size(65, 20);
+            this.MainMenuTechTree.Text = "Tech tree";
+            this.MainMenuTechTree.Click += new System.EventHandler(this.MainMenuTechTree_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,6 +326,7 @@
         private System.Windows.Forms.Button buttonMoveLeft;
         private System.Windows.Forms.Button buttonMoveRight;
         private System.Windows.Forms.Button buttonMoveDown;
+        private System.Windows.Forms.ToolStripMenuItem MainMenuTechTree;
     }
 }
 

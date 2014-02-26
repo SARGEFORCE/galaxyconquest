@@ -42,7 +42,7 @@ namespace GalaxyConquest
                 
                 generate_map(true, nd.getGalaxySize(), nd.getStarsCount());
                 generate_map(false, nd.getGalaxySize(), nd.getStarsCount());
-
+                Redraw();
             }
 
 #region someoldcode
@@ -475,15 +475,10 @@ namespace GalaxyConquest
         {
             mouseX = e.X;
             mouseY = e.Y;
-            
-
         }
 
         private void galaxyImage_MouseMove(object sender, MouseEventArgs e)
         {
-
-            
-
             if (e.Button == MouseButtons.Left)
             {
                 int dx = mouseX - e.X;
@@ -508,6 +503,12 @@ namespace GalaxyConquest
                 mouseY = e.Y;
                 Redraw();
             }
+        }
+
+        private void MainMenuTechTree_Click(object sender, EventArgs e)
+        {
+            Tech_Tree tt = new Tech_Tree();
+            tt.Show();
         }
 
         

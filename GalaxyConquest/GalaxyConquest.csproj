@@ -69,6 +69,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StarSystem.cs" />
     <Compile Include="StarWarp.cs" />
+    <Compile Include="Tech_Tree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tech_Tree.Designer.cs">
+      <DependentUpon>Tech_Tree.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +94,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tech_Tree.resx">
+      <DependentUpon>Tech_Tree.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
