@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.starsCount = new System.Windows.Forms.TextBox();
+            this.StarsScrollBar = new System.Windows.Forms.HScrollBar();
             this.label9 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -68,6 +71,9 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.starsCount);
+            this.groupBox1.Controls.Add(this.StarsScrollBar);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button8);
@@ -98,6 +104,37 @@
             this.groupBox1.Size = new System.Drawing.Size(371, 369);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(180, 286);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "stars";
+            // 
+            // starsCount
+            // 
+            this.starsCount.Location = new System.Drawing.Point(102, 283);
+            this.starsCount.Name = "starsCount";
+            this.starsCount.ReadOnly = true;
+            this.starsCount.Size = new System.Drawing.Size(72, 20);
+            this.starsCount.TabIndex = 26;
+            this.starsCount.Text = "400";
+            // 
+            // StarsScrollBar
+            // 
+            this.StarsScrollBar.LargeChange = 400;
+            this.StarsScrollBar.Location = new System.Drawing.Point(19, 284);
+            this.StarsScrollBar.Maximum = 4399;
+            this.StarsScrollBar.Minimum = 400;
+            this.StarsScrollBar.Name = "StarsScrollBar";
+            this.StarsScrollBar.Size = new System.Drawing.Size(80, 16);
+            this.StarsScrollBar.SmallChange = 400;
+            this.StarsScrollBar.TabIndex = 25;
+            this.StarsScrollBar.Value = 400;
+            this.StarsScrollBar.Scroll += new System.Windows.Forms.ScrollEventHandler(this.StarsScrollBar_Scroll);
             // 
             // label9
             // 
@@ -177,7 +214,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label7.Location = new System.Drawing.Point(6, 285);
+            this.label7.Location = new System.Drawing.Point(9, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 13);
             this.label7.TabIndex = 16;
@@ -186,7 +223,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(23, 311);
+            this.checkBox1.Location = new System.Drawing.Point(23, 309);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(101, 17);
             this.checkBox1.TabIndex = 15;
@@ -411,5 +448,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelGalaxyType;
         private System.Windows.Forms.Button buttonGalaxyTypeRight;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox starsCount;
+        private System.Windows.Forms.HScrollBar StarsScrollBar;
     }
 }

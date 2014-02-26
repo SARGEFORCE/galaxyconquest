@@ -77,9 +77,19 @@ namespace GalaxyConquest
             }
         }
 
+        private void StarsScrollBar_Scroll(object sender, ScrollEventArgs e)
+        {
+            starsCount.Text = StarsScrollBar.Value.ToString();
+        }
+
         public int getGalaxySize()
         {
             return (galaxysize);
+        }
+
+        public int getStarsCount()
+        {
+            return (StarsScrollBar.Value);
         }
 
     }

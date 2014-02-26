@@ -39,9 +39,9 @@ namespace GalaxyConquest
             {
                 galaxy = new ModelGalaxy();
                 galaxy.name = "Млечный путь";
-
-                generate_map(true, nd.getGalaxySize());
-                generate_map(false, nd.getGalaxySize());
+                
+                generate_map(true, nd.getGalaxySize(), nd.getStarsCount());
+                generate_map(false, nd.getGalaxySize(), nd.getStarsCount());
 
             }
 
@@ -371,7 +371,7 @@ namespace GalaxyConquest
             af.ShowDialog();
         }
 
-        public void generate_map(bool rotate, int galaxysize)
+        public void generate_map(bool rotate, int galaxysize, int starscount)
         {
             Double x;
             Double y;
@@ -381,7 +381,7 @@ namespace GalaxyConquest
             Double curve = 0;
             Random rand = new Random();
 
-            for (int j = 0; j < 30 * (galaxysize + 1); j++)
+            for (int j = 0; j < (starscount/80); j++)
             {
                 r = 0;
                 t = 0;
@@ -467,6 +467,8 @@ namespace GalaxyConquest
                     galaxy.stars.Add(s);
                 }
             }
+
+            //MessageBox.Show(galaxy.stars.Count.ToString(), "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void galaxyImage_MouseDown(object sender, MouseEventArgs e)
