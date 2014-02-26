@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 using System.IO;
-using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Media;
 
 namespace GalaxyConquest
 {
@@ -495,21 +488,22 @@ namespace GalaxyConquest
                 int dy = mouseY - e.Y;
                 if (dx > 0)
                 {
-                    horizontal -= 3;
+                    horizontal -= 5;
                 }
                 if (dx < 0)
                 {
-                    horizontal += 3;
+                    horizontal += 5;
                 }
                 if (dy > 0)
                 {
-                    vertical -= 3;
+                    vertical -= 5;
                 }
                 if (dy < 0)
                 {
-                    vertical += 3;
+                    vertical += 5;
                 }
-
+                mouseX = e.X;
+                mouseY = e.Y;
                 Redraw();
             }
         }
