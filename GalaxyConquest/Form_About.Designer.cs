@@ -33,11 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -46,6 +48,7 @@
             this.groupBox1.Size = new System.Drawing.Size(260, 268);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label3
             // 
@@ -55,6 +58,7 @@
             this.label3.Size = new System.Drawing.Size(131, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Dmitry Alimpiev a.k.a. Jerk";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -85,6 +89,16 @@
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(231, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Making changes to chow how-to use git and vs";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
             // Form_About
             // 
             this.AcceptButton = this.buttonOK;
@@ -111,5 +125,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
