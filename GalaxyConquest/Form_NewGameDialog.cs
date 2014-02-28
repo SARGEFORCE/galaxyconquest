@@ -23,38 +23,11 @@ namespace GalaxyConquest
         {
             if (galaxytype == 0)
             {
-                pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_irregular;
-                labelGalaxyType.Text = "Irregular";
-                galaxytype = 2;
+                return;
             }
             else
             {
-                if (galaxytype == 1)
-                {
-                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
-                    labelGalaxyType.Text = "Spiral";
-                    galaxytype = 0;
-                }
-                else
-                {
-                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
-                    labelGalaxyType.Text = "Elliptical";
-                    galaxytype = 1;
-                }
-            }
-        }
-
-        private void buttonGalaxyTypeRight_Click(object sender, EventArgs e)
-        {
-            if (galaxytype == 0)
-            {
-                pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
-                labelGalaxyType.Text = "Elliptical";
-                galaxytype = 1;
-            }
-            else
-            {
-                if (galaxytype == 1)
+                if (galaxytype == 3)
                 {
                     pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_irregular;
                     labelGalaxyType.Text = "Irregular";
@@ -62,9 +35,50 @@ namespace GalaxyConquest
                 }
                 else
                 {
-                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
-                    labelGalaxyType.Text = "Spiral";
-                    galaxytype = 0;
+                    if (galaxytype == 2)
+                    {
+                        pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
+                        labelGalaxyType.Text = "Elliptical";
+                        galaxytype = 1;
+                    }
+                    else
+                    {
+                        pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
+                        labelGalaxyType.Text = "Spiral";
+                        galaxytype = 0;
+                    }
+                }
+            }
+        }
+
+        private void buttonGalaxyTypeRight_Click(object sender, EventArgs e)
+        {
+            if (galaxytype == 5)
+            {
+                return;
+            }
+            else
+            {
+                if (galaxytype == 0)
+                {
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
+                    labelGalaxyType.Text = "Elliptical";
+                    galaxytype = 1;
+                }
+                else
+                {
+                    if (galaxytype == 1)
+                    {
+                        pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_irregular;
+                        labelGalaxyType.Text = "Irregular";
+                        galaxytype = 2;
+                    }
+                    else
+                    {
+                        pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
+                        labelGalaxyType.Text = "Sphere";
+                        galaxytype = 3;
+                    }
                 }
             }
         }

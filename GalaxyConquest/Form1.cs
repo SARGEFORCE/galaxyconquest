@@ -53,6 +53,10 @@ namespace GalaxyConquest
                 {
                     generate_irregular_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
                 }
+                if (nd.getGalaxyType() == 3)
+                {
+                    generate_sphere_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
+                }
                 Redraw();
             }
 
@@ -667,6 +671,100 @@ namespace GalaxyConquest
                     galaxy.stars.Add(s);
                 }
             }
+        }
+
+        public void generate_sphere_galaxy(bool rotate, int galaxysize, int starscount)
+        {
+            Double x; Double y; Double r; Double t; Double tX; Double tY; Double tZ; Double z = 1; Double curve = 0; Random rand = new Random(); t = 0; for (int j = 0; j < 20; j++)
+            {
+                r = 0;
+
+                t += 5;
+                for (int i = 0; i < 40; i++)
+                {
+                    r += 1;
+
+                    x = Math.Cos(r) * 500;
+                    y = Math.Sin(r) * 500;
+
+                    //tX = s.x * Math.Cos(spinX) - s.z * Math.Sin(spinX);
+                    //tZ = s.x * Math.Sin(spinX) + s.z * Math.Cos(spinX);
+                    //tY = s.y * Math.Cos(spinY) - tZ * Math.Sin(spinY);
+
+                    tX = x * Math.Cos(t) + z * Math.Sin(t);
+                    tZ = x * Math.Sin(t) - z * Math.Cos(t);
+                    tY = y * Math.Cos(t) + tZ * Math.Sin(t);
+
+
+
+                    StarSystem s = new StarSystem();
+                    s.x = tX;
+                    s.y = tZ;
+                    s.z = tY;
+                    s.type = rand.Next(7);  //type impact on size and color
+                    s.name = "";
+                    //RGB color with alfa
+                    s.color_A = rand.Next(200) + 55;
+                    switch (s.type)
+                    {
+                        //O - Blue, t =30 000 — 60 000 K
+                        case 0:
+                            s.color_R = 123;
+                            s.color_G = 104;
+                            s.color_B = 238;
+                            break;
+
+                        //B - Light blue, t = 10 500 — 30 000 K
+                        case 1:
+                            s.color_A = 180;
+                            s.color_R = 135;
+                            s.color_G = 206;
+                            s.color_B = 235;
+                            break;
+
+                        //A - White, t = 7500—10 000 K
+                        case 2:
+                            s.color_R = 255;
+                            s.color_G = 250;
+                            s.color_B = 240;
+                            break;
+
+                        //F - Light Yellow, t = 6000—7200 K
+                        case 3:
+                            s.color_A = 180;
+                            s.color_R = 255;
+                            s.color_G = 255;
+                            s.color_B = 0;
+                            break;
+
+                        //G - Yellow, t = 5500 — 6000 K
+                        case 4:
+                            s.color_R = 255;
+                            s.color_G = 255;
+                            s.color_B = 0;
+                            break;
+
+                        //K - Orange, t = 4000 — 5250 K
+                        case 5:
+                            s.color_R = 255;
+                            s.color_G = 140;
+                            s.color_B = 0;
+                            break;
+
+                        //M - Red, t = 2600 — 3850 K
+                        case 6:
+                            s.color_R = 255;
+                            s.color_G = 0;
+                            s.color_B = 0;
+                            break;
+
+                    }
+
+                    galaxy.stars.Add(s);
+                }
+            }
+
+            //MessageBox.Show(galaxy.stars.Count.ToString(), "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void galaxyImage_MouseDown(object sender, MouseEventArgs e)
