@@ -39,9 +39,20 @@ namespace GalaxyConquest
             {
                 galaxy = new ModelGalaxy();
                 galaxy.name = "Млечный путь";
-                
-                generate_map(true, nd.getGalaxySize(), nd.getStarsCount());
-                generate_map(false, nd.getGalaxySize(), nd.getStarsCount());
+                if (nd.getGalaxyType() == 0)
+                {
+                    generate_spiral_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
+                    generate_spiral_galaxy(false, nd.getGalaxySize(), nd.getStarsCount());
+                }
+                if (nd.getGalaxyType() == 1)
+                {
+                    generate_elliptical_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
+                    generate_elliptical_galaxy(false, nd.getGalaxySize(), nd.getStarsCount());
+                }
+                if (nd.getGalaxyType() == 2)
+                {
+                    generate_irregular_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
+                }
                 Redraw();
             }
 
@@ -218,7 +229,6 @@ namespace GalaxyConquest
             Redraw();
         }
 
-
         public void Redraw()
         {
             if (galaxy == null)
@@ -230,18 +240,12 @@ namespace GalaxyConquest
             galaxyBitmap = new Bitmap(galaxyImage.Width, galaxyImage.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
             Graphics g = Graphics.FromImage(galaxyBitmap);
-            
 
-            
-            g.ScaleTransform(scaling, scaling);
-            
             g.FillRectangle(Brushes.Black, 0, 0, galaxyBitmap.Width, galaxyBitmap.Height);
-
-            
             g.DrawString(galaxy.name, new Font("Arial", 10.0F), Brushes.White, new PointF(1.0F, 1.0F));
 
-
-
+            g.ScaleTransform(scaling, scaling);
+          
             float centerX = galaxyBitmap.Width / 2 / scaling;
             float centerY = galaxyBitmap.Height / 2 / scaling;
 
@@ -310,7 +314,7 @@ namespace GalaxyConquest
             galaxyImage.Refresh();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSpinDown_Click(object sender, EventArgs e)
         {
             spinY -= 0.2;
             Redraw();
@@ -371,7 +375,7 @@ namespace GalaxyConquest
             af.ShowDialog();
         }
 
-        public void generate_map(bool rotate, int galaxysize, int starscount)
+        public void generate_spiral_galaxy(bool rotate, int galaxysize, int starscount)
         {
             Double x;
             Double y;
@@ -469,6 +473,200 @@ namespace GalaxyConquest
             }
 
             //MessageBox.Show(galaxy.stars.Count.ToString(), "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        public void generate_elliptical_galaxy(bool rotate, int galaxysize, int starscount)
+        {
+            Double x;
+            Double y;
+            Double r;
+            Double t;
+            Double z = 0;
+            Double curve = 0;
+            Random rand = new Random();
+
+            for (int j = 0; j < (starscount/80); j++)
+            {
+                r = 0;
+                t = Math.PI;
+                for (int i = 0; i < 40; i++)
+                {
+                    r += rand.Next(4) + 2 + galaxysize;
+                    curve = Math.Pow((r - 2), 2);
+                    curve = curve / 150;
+
+                    z = t + (rand.NextDouble() - 0.5) * Math.PI;
+                    x = 1.5*curve * Math.Cos(z) + rand.Next(30) - 15;
+                    y = curve * Math.Sin(z) + rand.Next(30) - 15;
+
+                    if (rotate == true)
+                    {
+                        x = -x;
+                        y = -y;
+                    }
+
+                    StarSystem s = new StarSystem();
+                    s.x = x;
+                    s.y = -10.0 + rand.NextDouble() * 20.0;
+                    s.z = y;
+                    s.type = rand.Next(7);  //type impact on size and color
+                    s.name = "";
+                    //RGB color with alfa
+                    s.color_A = rand.Next(200) + 55;
+                    switch (s.type)
+                    {
+                        //O - Blue, t =30 000 — 60 000 K
+                        case 0:
+                            s.color_R = 123;
+                            s.color_G = 104;
+                            s.color_B = 238;
+                        break;
+
+                        //B - Light blue, t = 10 500 — 30 000 K
+                        case 1:
+                            s.color_A = 180;
+                            s.color_R = 135;
+                            s.color_G = 206;
+                            s.color_B = 235;
+                        break;
+
+                        //A - White, t = 7500—10 000 K
+                        case 2:
+                            s.color_R = 255;
+                            s.color_G = 250;
+                            s.color_B = 240;
+                        break;
+
+                        //F - Light Yellow, t = 6000—7200 K
+                        case 3:
+                            s.color_A = 180;
+                            s.color_R = 255;
+                            s.color_G = 255;
+                            s.color_B = 0;
+                        break;
+
+                        //G - Yellow, t = 5500 — 6000 K
+                        case 4:
+                            s.color_R = 255;
+                            s.color_G = 255;
+                            s.color_B = 0;
+                        break;
+
+                        //K - Orange, t = 4000 — 5250 K
+                        case 5:
+                            s.color_R = 255;
+                            s.color_G = 140;
+                            s.color_B = 0;
+                        break;
+
+                        //M - Red, t = 2600 — 3850 K
+                        case 6:
+                            s.color_R = 255;
+                            s.color_G = 0;
+                            s.color_B = 0;
+                        break;
+
+                    }
+
+                    galaxy.stars.Add(s);
+                }
+            }
+
+            //MessageBox.Show(galaxy.stars.Count.ToString(), "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+
+        public void generate_irregular_galaxy(bool rotate, int galaxysize, int starscount)//fix
+        {
+            Double x;
+            Double y;
+            Double r;
+            Double t;
+            Double z = 0;
+            Double curve = 0;
+            Random rand = new Random();
+
+            for (int j = 0; j < (starscount / 80); j++)
+            {
+                r = 0;
+                t = 0;
+                for (int i = 0; i < 40; i++)
+                {
+                    r += rand.Next(4) + 2 + galaxysize;
+                    curve = Math.Pow((r - 2), 2);
+                    curve = curve / 150;
+
+                    t += 0.2;
+                    z = t + (rand.NextDouble() - 0.5) * 2;
+                    x = curve + rand.Next(30) - 15;
+                    y = curve * Math.Sin(z) + rand.Next(100) - 15;
+
+                    StarSystem s = new StarSystem();
+                    s.x = x;
+                    s.y = -10.0 + rand.NextDouble() * 20.0;
+                    s.z = y;
+                    s.type = rand.Next(7);  //type impact on size and color
+                    s.name = "";
+                    //RGB color with alfa
+                    s.color_A = rand.Next(200) + 55;
+                    switch (s.type)
+                    {
+                        //O - Blue, t =30 000 — 60 000 K
+                        case 0:
+                            s.color_R = 123;
+                            s.color_G = 104;
+                            s.color_B = 238;
+                            break;
+
+                        //B - Light blue, t = 10 500 — 30 000 K
+                        case 1:
+                            s.color_A = 180;
+                            s.color_R = 135;
+                            s.color_G = 206;
+                            s.color_B = 235;
+                            break;
+
+                        //A - White, t = 7500—10 000 K
+                        case 2:
+                            s.color_R = 255;
+                            s.color_G = 250;
+                            s.color_B = 240;
+                            break;
+
+                        //F - Light Yellow, t = 6000—7200 K
+                        case 3:
+                            s.color_A = 180;
+                            s.color_R = 255;
+                            s.color_G = 255;
+                            s.color_B = 0;
+                            break;
+
+                        //G - Yellow, t = 5500 — 6000 K
+                        case 4:
+                            s.color_R = 255;
+                            s.color_G = 255;
+                            s.color_B = 0;
+                            break;
+
+                        //K - Orange, t = 4000 — 5250 K
+                        case 5:
+                            s.color_R = 255;
+                            s.color_G = 140;
+                            s.color_B = 0;
+                            break;
+
+                        //M - Red, t = 2600 — 3850 K
+                        case 6:
+                            s.color_R = 255;
+                            s.color_G = 0;
+                            s.color_B = 0;
+                            break;
+
+                    }
+
+                    galaxy.stars.Add(s);
+                }
+            }
         }
 
         private void galaxyImage_MouseDown(object sender, MouseEventArgs e)

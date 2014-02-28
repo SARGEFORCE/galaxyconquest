@@ -37,7 +37,7 @@
             this.mainMenuQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuText = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.galaxyImage = new System.Windows.Forms.PictureBox();
+            this.MainMenuTechTree = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.buttonDraw = new System.Windows.Forms.Button();
             this.buttonSpinLeft = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.buttonMoveLeft = new System.Windows.Forms.Button();
             this.buttonMoveRight = new System.Windows.Forms.Button();
             this.buttonMoveDown = new System.Windows.Forms.Button();
-            this.MainMenuTechTree = new System.Windows.Forms.ToolStripMenuItem();
+            this.galaxyImage = new System.Windows.Forms.PictureBox();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyImage)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             this.MainMenuTechTree});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(483, 24);
+            this.mainMenu.Size = new System.Drawing.Size(580, 24);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -124,35 +124,28 @@
             // mainMenuAbout
             // 
             this.mainMenuAbout.Name = "mainMenuAbout";
-            this.mainMenuAbout.Size = new System.Drawing.Size(152, 22);
+            this.mainMenuAbout.Size = new System.Drawing.Size(115, 22);
             this.mainMenuAbout.Text = "About...";
             this.mainMenuAbout.Click += new System.EventHandler(this.mainMenuAbout_Click);
             // 
-            // galaxyImage
+            // MainMenuTechTree
             // 
-            this.galaxyImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.galaxyImage.BackColor = System.Drawing.Color.Black;
-            this.galaxyImage.Location = new System.Drawing.Point(140, 27);
-            this.galaxyImage.Name = "galaxyImage";
-            this.galaxyImage.Size = new System.Drawing.Size(311, 263);
-            this.galaxyImage.TabIndex = 1;
-            this.galaxyImage.TabStop = false;
-            this.galaxyImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseDown);
-            this.galaxyImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseMove);
+            this.MainMenuTechTree.Name = "MainMenuTechTree";
+            this.MainMenuTechTree.Size = new System.Drawing.Size(65, 20);
+            this.MainMenuTechTree.Text = "Tech tree";
+            this.MainMenuTechTree.Click += new System.EventHandler(this.MainMenuTechTree_Click);
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Location = new System.Drawing.Point(0, 316);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 324);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(483, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(580, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // buttonDraw
             // 
-            this.buttonDraw.Location = new System.Drawing.Point(29, 45);
+            this.buttonDraw.Location = new System.Drawing.Point(56, 40);
             this.buttonDraw.Name = "buttonDraw";
             this.buttonDraw.Size = new System.Drawing.Size(75, 23);
             this.buttonDraw.TabIndex = 3;
@@ -163,7 +156,7 @@
             // buttonSpinLeft
             // 
             this.buttonSpinLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSpinLeft.Location = new System.Drawing.Point(234, 290);
+            this.buttonSpinLeft.Location = new System.Drawing.Point(290, 298);
             this.buttonSpinLeft.Name = "buttonSpinLeft";
             this.buttonSpinLeft.Size = new System.Drawing.Size(75, 23);
             this.buttonSpinLeft.TabIndex = 4;
@@ -174,7 +167,7 @@
             // buttonSpinRight
             // 
             this.buttonSpinRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSpinRight.Location = new System.Drawing.Point(315, 290);
+            this.buttonSpinRight.Location = new System.Drawing.Point(371, 298);
             this.buttonSpinRight.Name = "buttonSpinRight";
             this.buttonSpinRight.Size = new System.Drawing.Size(75, 23);
             this.buttonSpinRight.TabIndex = 5;
@@ -185,7 +178,7 @@
             // buttonSpinUp
             // 
             this.buttonSpinUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSpinUp.Location = new System.Drawing.Point(457, 72);
+            this.buttonSpinUp.Location = new System.Drawing.Point(543, 70);
             this.buttonSpinUp.Name = "buttonSpinUp";
             this.buttonSpinUp.Size = new System.Drawing.Size(25, 66);
             this.buttonSpinUp.TabIndex = 6;
@@ -196,17 +189,17 @@
             // buttonSpinDown
             // 
             this.buttonSpinDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSpinDown.Location = new System.Drawing.Point(458, 144);
+            this.buttonSpinDown.Location = new System.Drawing.Point(543, 142);
             this.buttonSpinDown.Name = "buttonSpinDown";
             this.buttonSpinDown.Size = new System.Drawing.Size(25, 66);
             this.buttonSpinDown.TabIndex = 7;
             this.buttonSpinDown.Text = "\\/";
             this.buttonSpinDown.UseVisualStyleBackColor = true;
-            this.buttonSpinDown.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSpinDown.Click += new System.EventHandler(this.buttonSpinDown_Click);
             // 
             // buttonScalingUp
             // 
-            this.buttonScalingUp.Location = new System.Drawing.Point(29, 207);
+            this.buttonScalingUp.Location = new System.Drawing.Point(56, 207);
             this.buttonScalingUp.Name = "buttonScalingUp";
             this.buttonScalingUp.Size = new System.Drawing.Size(75, 23);
             this.buttonScalingUp.TabIndex = 8;
@@ -216,7 +209,7 @@
             // 
             // buttonScalingDown
             // 
-            this.buttonScalingDown.Location = new System.Drawing.Point(29, 236);
+            this.buttonScalingDown.Location = new System.Drawing.Point(56, 236);
             this.buttonScalingDown.Name = "buttonScalingDown";
             this.buttonScalingDown.Size = new System.Drawing.Size(75, 23);
             this.buttonScalingDown.TabIndex = 9;
@@ -226,7 +219,7 @@
             // 
             // buttonMoveUp
             // 
-            this.buttonMoveUp.Location = new System.Drawing.Point(29, 106);
+            this.buttonMoveUp.Location = new System.Drawing.Point(56, 106);
             this.buttonMoveUp.Name = "buttonMoveUp";
             this.buttonMoveUp.Size = new System.Drawing.Size(75, 23);
             this.buttonMoveUp.TabIndex = 10;
@@ -236,7 +229,7 @@
             // 
             // buttonMoveLeft
             // 
-            this.buttonMoveLeft.Location = new System.Drawing.Point(0, 135);
+            this.buttonMoveLeft.Location = new System.Drawing.Point(12, 135);
             this.buttonMoveLeft.Name = "buttonMoveLeft";
             this.buttonMoveLeft.Size = new System.Drawing.Size(75, 23);
             this.buttonMoveLeft.TabIndex = 11;
@@ -246,7 +239,7 @@
             // 
             // buttonMoveRight
             // 
-            this.buttonMoveRight.Location = new System.Drawing.Point(81, 135);
+            this.buttonMoveRight.Location = new System.Drawing.Point(93, 135);
             this.buttonMoveRight.Name = "buttonMoveRight";
             this.buttonMoveRight.Size = new System.Drawing.Size(75, 23);
             this.buttonMoveRight.TabIndex = 12;
@@ -256,7 +249,7 @@
             // 
             // buttonMoveDown
             // 
-            this.buttonMoveDown.Location = new System.Drawing.Point(29, 166);
+            this.buttonMoveDown.Location = new System.Drawing.Point(56, 164);
             this.buttonMoveDown.Name = "buttonMoveDown";
             this.buttonMoveDown.Size = new System.Drawing.Size(75, 23);
             this.buttonMoveDown.TabIndex = 13;
@@ -264,18 +257,25 @@
             this.buttonMoveDown.UseVisualStyleBackColor = true;
             this.buttonMoveDown.Click += new System.EventHandler(this.buttonMoveDown_Click);
             // 
-            // MainMenuTechTree
+            // galaxyImage
             // 
-            this.MainMenuTechTree.Name = "MainMenuTechTree";
-            this.MainMenuTechTree.Size = new System.Drawing.Size(65, 20);
-            this.MainMenuTechTree.Text = "Tech tree";
-            this.MainMenuTechTree.Click += new System.EventHandler(this.MainMenuTechTree_Click);
+            this.galaxyImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.galaxyImage.BackColor = System.Drawing.Color.Black;
+            this.galaxyImage.Location = new System.Drawing.Point(174, 27);
+            this.galaxyImage.Name = "galaxyImage";
+            this.galaxyImage.Size = new System.Drawing.Size(363, 265);
+            this.galaxyImage.TabIndex = 1;
+            this.galaxyImage.TabStop = false;
+            this.galaxyImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseDown);
+            this.galaxyImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseMove);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 338);
+            this.ClientSize = new System.Drawing.Size(580, 346);
             this.Controls.Add(this.buttonMoveDown);
             this.Controls.Add(this.buttonMoveRight);
             this.Controls.Add(this.buttonMoveLeft);

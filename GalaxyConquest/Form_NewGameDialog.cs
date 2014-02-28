@@ -23,15 +23,24 @@ namespace GalaxyConquest
         {
             if (galaxytype == 0)
             {
-                pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
-                labelGalaxyType.Text = "Sphere";
-                galaxytype = 1;
+                pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_irregular;
+                labelGalaxyType.Text = "Irregular";
+                galaxytype = 2;
             }
             else
             {
-                pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
-                labelGalaxyType.Text = "Spiral";
-                galaxytype = 0;
+                if (galaxytype == 1)
+                {
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
+                    labelGalaxyType.Text = "Spiral";
+                    galaxytype = 0;
+                }
+                else
+                {
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
+                    labelGalaxyType.Text = "Elliptical";
+                    galaxytype = 1;
+                }
             }
         }
 
@@ -40,14 +49,23 @@ namespace GalaxyConquest
             if (galaxytype == 0)
             {
                 pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
-                labelGalaxyType.Text = "Sphere";
+                labelGalaxyType.Text = "Elliptical";
                 galaxytype = 1;
             }
             else
             {
-                pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
-                labelGalaxyType.Text = "Spiral";
-                galaxytype = 0;
+                if (galaxytype == 1)
+                {
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_irregular;
+                    labelGalaxyType.Text = "Irregular";
+                    galaxytype = 2;
+                }
+                else
+                {
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
+                    labelGalaxyType.Text = "Spiral";
+                    galaxytype = 0;
+                }
             }
         }
 
@@ -90,6 +108,10 @@ namespace GalaxyConquest
         public int getStarsCount()
         {
             return (StarsScrollBar.Value);
+        }
+        public int getGalaxyType()
+        {
+            return (galaxytype);
         }
 
     }
