@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace GalaxyConquest
 {
@@ -15,10 +16,6 @@ namespace GalaxyConquest
         public double x;
         public double y;
         public double z;
-        public int color_A; //alfa
-        public int color_R; //red
-        public int color_G; //green
-        public int color_B; //blue
-
+        public SolidBrush br; //brush for stars
     }
 }

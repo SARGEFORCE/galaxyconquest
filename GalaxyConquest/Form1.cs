@@ -22,6 +22,15 @@ namespace GalaxyConquest
         public int mouseX;
         public int mouseY;
 
+        public SolidBrush BlueBrush = new SolidBrush(Color.FromArgb(255,123,104,238));
+        public SolidBrush LightBlueBrush = new SolidBrush(Color.FromArgb(180,135,206,235));
+        public SolidBrush WhiteBrush = new SolidBrush(Color.FromArgb(255,225,250,240));
+        public SolidBrush LightYellowBrush = new SolidBrush(Color.FromArgb(180,255,255,0));
+        public SolidBrush YellowBrush = new SolidBrush(Color.FromArgb(255,255,255,0));
+        public SolidBrush OrangeBrush = new SolidBrush(Color.FromArgb(255,255,140,0));
+        public SolidBrush RedBrush = new SolidBrush(Color.FromArgb(255,255,0,0));
+        public SolidBrush SuperWhiteBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 0));
+
         public Form1()
         {
             InitializeComponent();
@@ -276,11 +285,8 @@ namespace GalaxyConquest
                 screenY = tY;
 
                 starSize = s.type + 4;
-
-                //create new brush with color from alfa and RGB
-                SolidBrush br = new SolidBrush(Color.FromArgb(s.color_A, s.color_R, s.color_G, s.color_B));
                 
-                g.FillEllipse(br, centerX + (int)screenX - starSize / 2, centerY + (int)screenY - starSize / 2, starSize, starSize);
+                g.FillEllipse(s.br, centerX + (int)screenX - starSize / 2, centerY + (int)screenY - starSize / 2, starSize, starSize);
                 g.DrawString(s.name, new Font("Arial", 8.0F), Brushes.White, new PointF(centerX + (int)screenX, centerY + (int)screenY));
                 
             }
@@ -366,10 +372,7 @@ namespace GalaxyConquest
                 next = rand.Next(galaxy.stars.Count);
                 galaxy.stars[next].name = "super nova";
                 galaxy.stars[next].type = 8;
-                galaxy.stars[next].color_A = 255;
-                galaxy.stars[next].color_R = 255;
-                galaxy.stars[next].color_G = 255;
-                galaxy.stars[next].color_B = 240;
+                galaxy.stars[next].br = SuperWhiteBrush;
             }
         }
 
@@ -410,59 +413,41 @@ namespace GalaxyConquest
                     s.z = y;
                     s.type = rand.Next(7);  //type impact on size and color
                     s.name = "";
-                    //RGB color with alfa
-                    s.color_A = rand.Next(200) + 55;
                     switch (s.type)
                     {
                         //O - Blue, t =30 000 — 60 000 K
                         case 0:
-                            s.color_R = 123;
-                            s.color_G = 104;
-                            s.color_B = 238;
+                            s.br = BlueBrush;
                         break;
 
                         //B - Light blue, t = 10 500 — 30 000 K
                         case 1:
-                            s.color_A = 180;
-                            s.color_R = 135;
-                            s.color_G = 206;
-                            s.color_B = 235;
+                            s.br = LightBlueBrush;
                         break;
 
                         //A - White, t = 7500—10 000 K
                         case 2:
-                            s.color_R = 255;
-                            s.color_G = 250;
-                            s.color_B = 240;
+                            s.br = WhiteBrush;
                         break;
 
                         //F - Light Yellow, t = 6000—7200 K
                         case 3:
-                            s.color_A = 180;
-                            s.color_R = 255;
-                            s.color_G = 255;
-                            s.color_B = 0;
+                            s.br = LightYellowBrush;
                         break;
 
                         //G - Yellow, t = 5500 — 6000 K
                         case 4:
-                            s.color_R = 255;
-                            s.color_G = 255;
-                            s.color_B = 0;
+                            s.br = YellowBrush;
                         break;
 
                         //K - Orange, t = 4000 — 5250 K
                         case 5:
-                            s.color_R = 255;
-                            s.color_G = 140;
-                            s.color_B = 0;
+                            s.br = OrangeBrush;
                         break;
 
                         //M - Red, t = 2600 — 3850 K
                         case 6:
-                            s.color_R = 255;
-                            s.color_G = 0;
-                            s.color_B = 0;
+                            s.br = RedBrush;
                         break;
                     }
                     galaxy.stars.Add(s);
@@ -506,60 +491,42 @@ namespace GalaxyConquest
                     s.z = y;
                     s.type = rand.Next(7);  //type impact on size and color
                     s.name = "";
-                    //RGB color with alfa
-                    s.color_A = rand.Next(200) + 55;
                     switch (s.type)
                     {
                         //O - Blue, t =30 000 — 60 000 K
                         case 0:
-                            s.color_R = 123;
-                            s.color_G = 104;
-                            s.color_B = 238;
-                        break;
+                            s.br = BlueBrush;
+                            break;
 
                         //B - Light blue, t = 10 500 — 30 000 K
                         case 1:
-                            s.color_A = 180;
-                            s.color_R = 135;
-                            s.color_G = 206;
-                            s.color_B = 235;
-                        break;
+                            s.br = LightBlueBrush;
+                            break;
 
                         //A - White, t = 7500—10 000 K
                         case 2:
-                            s.color_R = 255;
-                            s.color_G = 250;
-                            s.color_B = 240;
-                        break;
+                            s.br = WhiteBrush;
+                            break;
 
                         //F - Light Yellow, t = 6000—7200 K
                         case 3:
-                            s.color_A = 180;
-                            s.color_R = 255;
-                            s.color_G = 255;
-                            s.color_B = 0;
-                        break;
+                            s.br = LightYellowBrush;
+                            break;
 
                         //G - Yellow, t = 5500 — 6000 K
                         case 4:
-                            s.color_R = 255;
-                            s.color_G = 255;
-                            s.color_B = 0;
-                        break;
+                            s.br = YellowBrush;
+                            break;
 
                         //K - Orange, t = 4000 — 5250 K
                         case 5:
-                            s.color_R = 255;
-                            s.color_G = 140;
-                            s.color_B = 0;
-                        break;
+                            s.br = OrangeBrush;
+                            break;
 
                         //M - Red, t = 2600 — 3850 K
                         case 6:
-                            s.color_R = 255;
-                            s.color_G = 0;
-                            s.color_B = 0;
-                        break;
+                            s.br = RedBrush;
+                            break;
                     }
                     galaxy.stars.Add(s);
                 }
@@ -597,59 +564,41 @@ namespace GalaxyConquest
                     s.z = y;
                     s.type = rand.Next(7);  //type impact on size and color
                     s.name = "";
-                    //RGB color with alfa
-                    s.color_A = rand.Next(200) + 55;
                     switch (s.type)
                     {
                         //O - Blue, t =30 000 — 60 000 K
                         case 0:
-                            s.color_R = 123;
-                            s.color_G = 104;
-                            s.color_B = 238;
+                            s.br = BlueBrush;
                             break;
 
                         //B - Light blue, t = 10 500 — 30 000 K
                         case 1:
-                            s.color_A = 180;
-                            s.color_R = 135;
-                            s.color_G = 206;
-                            s.color_B = 235;
+                            s.br = LightBlueBrush;
                             break;
 
                         //A - White, t = 7500—10 000 K
                         case 2:
-                            s.color_R = 255;
-                            s.color_G = 250;
-                            s.color_B = 240;
+                            s.br = WhiteBrush;
                             break;
 
                         //F - Light Yellow, t = 6000—7200 K
                         case 3:
-                            s.color_A = 180;
-                            s.color_R = 255;
-                            s.color_G = 255;
-                            s.color_B = 0;
+                            s.br = LightYellowBrush;
                             break;
 
                         //G - Yellow, t = 5500 — 6000 K
                         case 4:
-                            s.color_R = 255;
-                            s.color_G = 255;
-                            s.color_B = 0;
+                            s.br = YellowBrush;
                             break;
 
                         //K - Orange, t = 4000 — 5250 K
                         case 5:
-                            s.color_R = 255;
-                            s.color_G = 140;
-                            s.color_B = 0;
+                            s.br = OrangeBrush;
                             break;
 
                         //M - Red, t = 2600 — 3850 K
                         case 6:
-                            s.color_R = 255;
-                            s.color_G = 0;
-                            s.color_B = 0;
+                            s.br = RedBrush;
                             break;
                     }
                     galaxy.stars.Add(s);
@@ -691,59 +640,41 @@ namespace GalaxyConquest
                     s.z = tY;
                     s.type = rand.Next(7);  //type impact on size and color
                     s.name = "";
-                    //RGB color with alfa
-                    s.color_A = rand.Next(200) + 55;
                     switch (s.type)
                     {
                         //O - Blue, t =30 000 — 60 000 K
                         case 0:
-                            s.color_R = 123;
-                            s.color_G = 104;
-                            s.color_B = 238;
+                            s.br = BlueBrush;
                             break;
 
                         //B - Light blue, t = 10 500 — 30 000 K
                         case 1:
-                            s.color_A = 180;
-                            s.color_R = 135;
-                            s.color_G = 206;
-                            s.color_B = 235;
+                            s.br = LightBlueBrush;
                             break;
 
                         //A - White, t = 7500—10 000 K
                         case 2:
-                            s.color_R = 255;
-                            s.color_G = 250;
-                            s.color_B = 240;
+                            s.br = WhiteBrush;
                             break;
 
                         //F - Light Yellow, t = 6000—7200 K
                         case 3:
-                            s.color_A = 180;
-                            s.color_R = 255;
-                            s.color_G = 255;
-                            s.color_B = 0;
+                            s.br = LightYellowBrush;
                             break;
 
                         //G - Yellow, t = 5500 — 6000 K
                         case 4:
-                            s.color_R = 255;
-                            s.color_G = 255;
-                            s.color_B = 0;
+                            s.br = YellowBrush;
                             break;
 
                         //K - Orange, t = 4000 — 5250 K
                         case 5:
-                            s.color_R = 255;
-                            s.color_G = 140;
-                            s.color_B = 0;
+                            s.br = OrangeBrush;
                             break;
 
                         //M - Red, t = 2600 — 3850 K
                         case 6:
-                            s.color_R = 255;
-                            s.color_G = 0;
-                            s.color_B = 0;
+                            s.br = RedBrush;
                             break;
                     }
                     galaxy.stars.Add(s);
