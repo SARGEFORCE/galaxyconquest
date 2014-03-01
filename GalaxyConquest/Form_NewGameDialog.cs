@@ -21,65 +21,55 @@ namespace GalaxyConquest
 
         private void buttonGalaxyTypeLeft_Click(object sender, EventArgs e)
         {
-            if (galaxytype == 0)
+            switch (galaxytype)
             {
-                return;
-            }
-            else
-            {
-                if (galaxytype == 3)
-                {
+                case 0:
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
+                    labelGalaxyType.Text = "Sphere";
+                    galaxytype = 3;
+                    break;
+                case 1:
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
+                    labelGalaxyType.Text = "Spiral";
+                    galaxytype = 0;
+                    break;
+                case 2:
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
+                    labelGalaxyType.Text = "Elliptical";
+                    galaxytype = 1;
+                    break;
+                case 3:
                     pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_irregular;
                     labelGalaxyType.Text = "Irregular";
                     galaxytype = 2;
-                }
-                else
-                {
-                    if (galaxytype == 2)
-                    {
-                        pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
-                        labelGalaxyType.Text = "Elliptical";
-                        galaxytype = 1;
-                    }
-                    else
-                    {
-                        pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
-                        labelGalaxyType.Text = "Spiral";
-                        galaxytype = 0;
-                    }
-                }
+                    break;
             }
         }
 
         private void buttonGalaxyTypeRight_Click(object sender, EventArgs e)
         {
-            if (galaxytype == 5)
+            switch (galaxytype)
             {
-                return;
-            }
-            else
-            {
-                if (galaxytype == 0)
-                {
+                case 0:
                     pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
                     labelGalaxyType.Text = "Elliptical";
                     galaxytype = 1;
-                }
-                else
-                {
-                    if (galaxytype == 1)
-                    {
-                        pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_irregular;
-                        labelGalaxyType.Text = "Irregular";
-                        galaxytype = 2;
-                    }
-                    else
-                    {
-                        pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
-                        labelGalaxyType.Text = "Sphere";
-                        galaxytype = 3;
-                    }
-                }
+                    break;
+                case 1:
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_irregular;
+                    labelGalaxyType.Text = "Irregular";
+                    galaxytype = 2;
+                    break;
+                case 2:
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_sphere;
+                    labelGalaxyType.Text = "Sphere";
+                    galaxytype = 3;
+                    break;
+                case 3:
+                    pictureBoxGalaxyType.Image = Properties.Resources.icon_newgame_spiral;
+                    labelGalaxyType.Text = "Spiral";
+                    galaxytype = 0;
+                    break;
             }
         }
 
@@ -123,6 +113,7 @@ namespace GalaxyConquest
         {
             return (StarsScrollBar.Value);
         }
+
         public int getGalaxyType()
         {
             return (galaxytype);

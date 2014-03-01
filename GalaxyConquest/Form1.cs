@@ -258,15 +258,8 @@ namespace GalaxyConquest
 
             int starSize = 0;
 
-
-
-
             double screenX;
             double screenY;
-
-
-
-
 
             //рисуем звездные системы
             for (int i = 0; i < galaxy.stars.Count; i++)
@@ -282,8 +275,6 @@ namespace GalaxyConquest
                 screenY = tY;
 
                 starSize = s.type + 4;
-                
-               
 
                 //create new brush with color from alfa and RGB
                 SolidBrush br = new SolidBrush(Color.FromArgb(s.color_A, s.color_R, s.color_G, s.color_B));
@@ -292,17 +283,6 @@ namespace GalaxyConquest
                 g.DrawString(s.name, new Font("Arial", 8.0F), Brushes.White, new PointF(centerX + (int)screenX, centerY + (int)screenY));
                 
             }
-
-
-
-
-
-
-
-
-
-
-
 
             //рисуем гиперпереходы
             for (int i = 0; i < galaxy.lanes.Count; i++)
@@ -346,8 +326,6 @@ namespace GalaxyConquest
                 bf.Serialize(fs, galaxy);
 
                 fs.Close();
-
-
             }
         }
 
@@ -359,7 +337,6 @@ namespace GalaxyConquest
                 string fileName = sDlg.FileName;
 
                 FileStream fs = new FileStream(fileName, FileMode.Open);
-
 
                 //XmlSerializer xs = new XmlSerializer(typeof(ModelGalaxy));
                 //xs.Serialize(fs, galaxy);                
@@ -399,6 +376,7 @@ namespace GalaxyConquest
                     curve = Math.Pow((r - 4), 2);
                     curve = curve / 150;
                     t += 0.2;
+
                     z = t + (rand.NextDouble() - 0.5) * 2;
                     x = curve * Math.Cos(z) + rand.Next(30) - 15;
                     y = curve * Math.Sin(z) + rand.Next(30) - 15;
@@ -469,14 +447,10 @@ namespace GalaxyConquest
                             s.color_G = 0;
                             s.color_B = 0;
                         break;
-
                     }
-
                     galaxy.stars.Add(s);
                 }
             }
-
-            //MessageBox.Show(galaxy.stars.Count.ToString(), "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         public void generate_elliptical_galaxy(bool rotate, int galaxysize, int starscount)
@@ -569,16 +543,11 @@ namespace GalaxyConquest
                             s.color_G = 0;
                             s.color_B = 0;
                         break;
-
                     }
-
                     galaxy.stars.Add(s);
                 }
             }
-
-            //MessageBox.Show(galaxy.stars.Count.ToString(), "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
-
 
         public void generate_irregular_galaxy(bool rotate, int galaxysize, int starscount)//fix
         {
@@ -665,9 +634,7 @@ namespace GalaxyConquest
                             s.color_G = 0;
                             s.color_B = 0;
                             break;
-
                     }
-
                     galaxy.stars.Add(s);
                 }
             }
@@ -675,27 +642,31 @@ namespace GalaxyConquest
 
         public void generate_sphere_galaxy(bool rotate, int galaxysize, int starscount)
         {
-            Double x; Double y; Double r; Double t; Double tX; Double tY; Double tZ; Double z = 1; Double curve = 0; Random rand = new Random(); t = 0; for (int j = 0; j < 20; j++)
+            Double x;
+            Double y;
+            Double z = 1;
+            Double r;
+            Double t;
+            Double tX;
+            Double tY;
+            Double tZ;
+
+            Random rand = new Random();
+            t = 0;
+            for (int j = 0; j < starscount/40; j++)
             {
                 r = 0;
-
                 t += 5;
                 for (int i = 0; i < 40; i++)
                 {
                     r += 1;
 
-                    x = Math.Cos(r) * 500;
-                    y = Math.Sin(r) * 500;
-
-                    //tX = s.x * Math.Cos(spinX) - s.z * Math.Sin(spinX);
-                    //tZ = s.x * Math.Sin(spinX) + s.z * Math.Cos(spinX);
-                    //tY = s.y * Math.Cos(spinY) - tZ * Math.Sin(spinY);
+                    x = Math.Cos(r) * 100 * (galaxysize + 1);
+                    y = Math.Sin(r) * 100 * (galaxysize + 1);
 
                     tX = x * Math.Cos(t) + z * Math.Sin(t);
                     tZ = x * Math.Sin(t) - z * Math.Cos(t);
                     tY = y * Math.Cos(t) + tZ * Math.Sin(t);
-
-
 
                     StarSystem s = new StarSystem();
                     s.x = tX;
@@ -757,9 +728,7 @@ namespace GalaxyConquest
                             s.color_G = 0;
                             s.color_B = 0;
                             break;
-
                     }
-
                     galaxy.stars.Add(s);
                 }
             }
