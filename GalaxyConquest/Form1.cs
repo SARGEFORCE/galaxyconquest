@@ -39,23 +39,26 @@ namespace GalaxyConquest
             {
                 galaxy = new ModelGalaxy();
                 galaxy.name = "Млечный путь";
-                if (nd.getGalaxyType() == 0)
+                switch (nd.getGalaxyType())
                 {
-                    generate_spiral_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
-                    generate_spiral_galaxy(false, nd.getGalaxySize(), nd.getStarsCount());
+                    case 0:
+                        generate_spiral_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
+                        generate_spiral_galaxy(false, nd.getGalaxySize(), nd.getStarsCount());
+                        break;
+                    case 1:
+                        generate_elliptical_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
+                        generate_elliptical_galaxy(false, nd.getGalaxySize(), nd.getStarsCount());
+                        break;
+                    case 2:
+                        generate_irregular_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
+                        break;
+                    case 3:
+                        generate_sphere_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
+                        break;
                 }
-                if (nd.getGalaxyType() == 1)
+                if (nd.getGalaxyRandomEvents() == true)
                 {
-                    generate_elliptical_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
-                    generate_elliptical_galaxy(false, nd.getGalaxySize(), nd.getStarsCount());
-                }
-                if (nd.getGalaxyType() == 2)
-                {
-                    generate_irregular_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
-                }
-                if (nd.getGalaxyType() == 3)
-                {
-                    generate_sphere_galaxy(true, nd.getGalaxySize(), nd.getStarsCount());
+                    generate_random_events();
                 }
                 Redraw();
             }
@@ -180,7 +183,6 @@ namespace GalaxyConquest
             Redraw();
         }
 
-
         private void buttonScalingUp_Click(object sender, EventArgs e)
         {
             if (scaling >= 10)
@@ -207,7 +209,6 @@ namespace GalaxyConquest
                 Redraw();
             }
         }
-
 
         private void buttonMoveRight_Click(object sender, EventArgs e)
         {
@@ -354,6 +355,22 @@ namespace GalaxyConquest
         {
             Form_About af = new Form_About();
             af.ShowDialog();
+        }
+
+        public void generate_random_events()
+        {
+            int next;
+            Random rand = new Random();
+            for (int i = 0; i < galaxy.stars.Count/20; i++)
+            {
+                next = rand.Next(galaxy.stars.Count);
+                galaxy.stars[next].name = "super nova";
+                galaxy.stars[next].type = 8;
+                galaxy.stars[next].color_A = 255;
+                galaxy.stars[next].color_R = 255;
+                galaxy.stars[next].color_G = 255;
+                galaxy.stars[next].color_B = 240;
+            }
         }
 
         public void generate_spiral_galaxy(bool rotate, int galaxysize, int starscount)

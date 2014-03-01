@@ -41,7 +41,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxRandomEvents = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -83,7 +83,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.checkBoxRandomEvents);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button6);
@@ -220,15 +220,15 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Additional options";
             // 
-            // checkBox1
+            // checkBoxRandomEvents
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(23, 309);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 17);
-            this.checkBox1.TabIndex = 15;
-            this.checkBox1.Text = "Random events";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxRandomEvents.AutoSize = true;
+            this.checkBoxRandomEvents.Location = new System.Drawing.Point(23, 309);
+            this.checkBoxRandomEvents.Name = "checkBoxRandomEvents";
+            this.checkBoxRandomEvents.Size = new System.Drawing.Size(101, 17);
+            this.checkBoxRandomEvents.TabIndex = 15;
+            this.checkBoxRandomEvents.Text = "Random events";
+            this.checkBoxRandomEvents.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -435,7 +435,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxRandomEvents;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

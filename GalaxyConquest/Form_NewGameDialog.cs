@@ -119,5 +119,10 @@ namespace GalaxyConquest
             return (galaxytype);
         }
 
+        public bool getGalaxyRandomEvents()
+        {
+            return (checkBoxRandomEvents.Checked);
+        }
+
     }
 }
