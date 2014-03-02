@@ -36,6 +36,20 @@ namespace GalaxyConquest
             InitializeComponent();
         }
 
+        public override Size MinimumSize
+        {
+            get
+            {
+                return base.MinimumSize;
+               
+            }
+            set
+            {
+                base.MinimumSize = new Size(this.Width,this.Height);
+           
+            }
+            
+        }
         private void mainMenuQuit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -724,8 +738,5 @@ namespace GalaxyConquest
             tt.Show();
         }
 
-        
-
-        
     }
 }
