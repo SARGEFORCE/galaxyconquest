@@ -738,5 +738,11 @@ namespace GalaxyConquest
             tt.Show();
         }
 
+        private void dModelsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_3d pl = new Form_3d();
+            pl.Show();
+        }
+
     }
 }

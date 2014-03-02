@@ -38,6 +38,7 @@
             this.mainMenuText = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuTechTree = new System.Windows.Forms.ToolStripMenuItem();
+            this.dModelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.buttonDraw = new System.Windows.Forms.Button();
             this.buttonSpinLeft = new System.Windows.Forms.Button();
@@ -51,15 +52,6 @@
             this.buttonMoveRight = new System.Windows.Forms.Button();
             this.buttonMoveDown = new System.Windows.Forms.Button();
             this.galaxyImage = new System.Windows.Forms.PictureBox();
-            this.dModelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.planetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.shipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.scoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.frigateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.destroyerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cruiserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.battleshipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.titanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyImage)).BeginInit();
             this.SuspendLayout();
@@ -144,6 +136,13 @@
             this.MainMenuTechTree.Size = new System.Drawing.Size(68, 20);
             this.MainMenuTechTree.Text = "Tech tree";
             this.MainMenuTechTree.Click += new System.EventHandler(this.MainMenuTechTree_Click);
+            // 
+            // dModelsToolStripMenuItem
+            // 
+            this.dModelsToolStripMenuItem.Name = "dModelsToolStripMenuItem";
+            this.dModelsToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.dModelsToolStripMenuItem.Text = "3d models";
+            this.dModelsToolStripMenuItem.Click += new System.EventHandler(this.dModelsToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -281,70 +280,6 @@
             this.galaxyImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseDown);
             this.galaxyImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseMove);
             // 
-            // dModelsToolStripMenuItem
-            // 
-            this.dModelsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.planetToolStripMenuItem,
-            this.shipToolStripMenuItem});
-            this.dModelsToolStripMenuItem.Name = "dModelsToolStripMenuItem";
-            this.dModelsToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.dModelsToolStripMenuItem.Text = "3d models";
-            // 
-            // planetToolStripMenuItem
-            // 
-            this.planetToolStripMenuItem.Name = "planetToolStripMenuItem";
-            this.planetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.planetToolStripMenuItem.Text = "Planet";
-            // 
-            // shipToolStripMenuItem
-            // 
-            this.shipToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.scoutToolStripMenuItem,
-            this.frigateToolStripMenuItem,
-            this.destroyerToolStripMenuItem,
-            this.cruiserToolStripMenuItem,
-            this.battleshipToolStripMenuItem,
-            this.titanToolStripMenuItem});
-            this.shipToolStripMenuItem.Name = "shipToolStripMenuItem";
-            this.shipToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.shipToolStripMenuItem.Text = "Ship";
-            // 
-            // scoutToolStripMenuItem
-            // 
-            this.scoutToolStripMenuItem.Name = "scoutToolStripMenuItem";
-            this.scoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.scoutToolStripMenuItem.Text = "Scout";
-            // 
-            // frigateToolStripMenuItem
-            // 
-            this.frigateToolStripMenuItem.Name = "frigateToolStripMenuItem";
-            this.frigateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.frigateToolStripMenuItem.Text = "Frigate";
-            // 
-            // destroyerToolStripMenuItem
-            // 
-            this.destroyerToolStripMenuItem.Name = "destroyerToolStripMenuItem";
-            this.destroyerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.destroyerToolStripMenuItem.Text = "Destroyer";
-            // 
-            // cruiserToolStripMenuItem
-            // 
-            this.cruiserToolStripMenuItem.Name = "cruiserToolStripMenuItem";
-            this.cruiserToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.cruiserToolStripMenuItem.Text = "Cruiser";
-            // 
-            // battleshipToolStripMenuItem
-            // 
-            this.battleshipToolStripMenuItem.Name = "battleshipToolStripMenuItem";
-            this.battleshipToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.battleshipToolStripMenuItem.Text = "Battleship";
-            // 
-            // titanToolStripMenuItem
-            // 
-            this.titanToolStripMenuItem.Name = "titanToolStripMenuItem";
-            this.titanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.titanToolStripMenuItem.Text = "Titan";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,14 +337,6 @@
         private System.Windows.Forms.Button buttonMoveDown;
         private System.Windows.Forms.ToolStripMenuItem MainMenuTechTree;
         private System.Windows.Forms.ToolStripMenuItem dModelsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem planetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem shipToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem scoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem frigateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem destroyerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cruiserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem battleshipToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem titanToolStripMenuItem;
     }
 }
 
