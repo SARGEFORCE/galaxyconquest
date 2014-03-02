@@ -51,6 +51,15 @@
             this.buttonMoveRight = new System.Windows.Forms.Button();
             this.buttonMoveDown = new System.Windows.Forms.Button();
             this.galaxyImage = new System.Windows.Forms.PictureBox();
+            this.dModelsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.planetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frigateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.destroyerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cruiserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.battleshipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.titanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyImage)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +69,8 @@
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenuFile,
             this.mainMenuText,
-            this.MainMenuTechTree});
+            this.MainMenuTechTree,
+            this.dModelsToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(580, 24);
@@ -76,39 +86,39 @@
             this.toolStripSeparator1,
             this.mainMenuQuit});
             this.mainMenuFile.Name = "mainMenuFile";
-            this.mainMenuFile.Size = new System.Drawing.Size(35, 20);
+            this.mainMenuFile.Size = new System.Drawing.Size(37, 20);
             this.mainMenuFile.Text = "File";
             // 
             // mainMenuNew
             // 
             this.mainMenuNew.Name = "mainMenuNew";
-            this.mainMenuNew.Size = new System.Drawing.Size(152, 22);
+            this.mainMenuNew.Size = new System.Drawing.Size(112, 22);
             this.mainMenuNew.Text = "New";
             this.mainMenuNew.Click += new System.EventHandler(this.mainMenuNew_Click);
             // 
             // mainMenuOpen
             // 
             this.mainMenuOpen.Name = "mainMenuOpen";
-            this.mainMenuOpen.Size = new System.Drawing.Size(152, 22);
+            this.mainMenuOpen.Size = new System.Drawing.Size(112, 22);
             this.mainMenuOpen.Text = "Open...";
             this.mainMenuOpen.Click += new System.EventHandler(this.mainMenuOpen_Click);
             // 
             // mainMenuSave
             // 
             this.mainMenuSave.Name = "mainMenuSave";
-            this.mainMenuSave.Size = new System.Drawing.Size(152, 22);
+            this.mainMenuSave.Size = new System.Drawing.Size(112, 22);
             this.mainMenuSave.Text = "Save...";
             this.mainMenuSave.Click += new System.EventHandler(this.mainMenuSave_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(109, 6);
             // 
             // mainMenuQuit
             // 
             this.mainMenuQuit.Name = "mainMenuQuit";
-            this.mainMenuQuit.Size = new System.Drawing.Size(152, 22);
+            this.mainMenuQuit.Size = new System.Drawing.Size(112, 22);
             this.mainMenuQuit.Text = "Quit";
             this.mainMenuQuit.Click += new System.EventHandler(this.mainMenuQuit_Click);
             // 
@@ -118,20 +128,20 @@
             this.mainMenuText.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenuAbout});
             this.mainMenuText.Name = "mainMenuText";
-            this.mainMenuText.Size = new System.Drawing.Size(40, 20);
+            this.mainMenuText.Size = new System.Drawing.Size(44, 20);
             this.mainMenuText.Text = "Help";
             // 
             // mainMenuAbout
             // 
             this.mainMenuAbout.Name = "mainMenuAbout";
-            this.mainMenuAbout.Size = new System.Drawing.Size(115, 22);
+            this.mainMenuAbout.Size = new System.Drawing.Size(116, 22);
             this.mainMenuAbout.Text = "About...";
             this.mainMenuAbout.Click += new System.EventHandler(this.mainMenuAbout_Click);
             // 
             // MainMenuTechTree
             // 
             this.MainMenuTechTree.Name = "MainMenuTechTree";
-            this.MainMenuTechTree.Size = new System.Drawing.Size(65, 20);
+            this.MainMenuTechTree.Size = new System.Drawing.Size(68, 20);
             this.MainMenuTechTree.Text = "Tech tree";
             this.MainMenuTechTree.Click += new System.EventHandler(this.MainMenuTechTree_Click);
             // 
@@ -259,9 +269,9 @@
             // 
             // galaxyImage
             // 
-            this.galaxyImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.galaxyImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.galaxyImage.BackColor = System.Drawing.Color.Black;
             this.galaxyImage.Location = new System.Drawing.Point(174, 27);
             this.galaxyImage.Name = "galaxyImage";
@@ -270,6 +280,70 @@
             this.galaxyImage.TabStop = false;
             this.galaxyImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseDown);
             this.galaxyImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseMove);
+            // 
+            // dModelsToolStripMenuItem
+            // 
+            this.dModelsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.planetToolStripMenuItem,
+            this.shipToolStripMenuItem});
+            this.dModelsToolStripMenuItem.Name = "dModelsToolStripMenuItem";
+            this.dModelsToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.dModelsToolStripMenuItem.Text = "3d models";
+            // 
+            // planetToolStripMenuItem
+            // 
+            this.planetToolStripMenuItem.Name = "planetToolStripMenuItem";
+            this.planetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.planetToolStripMenuItem.Text = "Planet";
+            // 
+            // shipToolStripMenuItem
+            // 
+            this.shipToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.scoutToolStripMenuItem,
+            this.frigateToolStripMenuItem,
+            this.destroyerToolStripMenuItem,
+            this.cruiserToolStripMenuItem,
+            this.battleshipToolStripMenuItem,
+            this.titanToolStripMenuItem});
+            this.shipToolStripMenuItem.Name = "shipToolStripMenuItem";
+            this.shipToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.shipToolStripMenuItem.Text = "Ship";
+            // 
+            // scoutToolStripMenuItem
+            // 
+            this.scoutToolStripMenuItem.Name = "scoutToolStripMenuItem";
+            this.scoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.scoutToolStripMenuItem.Text = "Scout";
+            // 
+            // frigateToolStripMenuItem
+            // 
+            this.frigateToolStripMenuItem.Name = "frigateToolStripMenuItem";
+            this.frigateToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.frigateToolStripMenuItem.Text = "Frigate";
+            // 
+            // destroyerToolStripMenuItem
+            // 
+            this.destroyerToolStripMenuItem.Name = "destroyerToolStripMenuItem";
+            this.destroyerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.destroyerToolStripMenuItem.Text = "Destroyer";
+            // 
+            // cruiserToolStripMenuItem
+            // 
+            this.cruiserToolStripMenuItem.Name = "cruiserToolStripMenuItem";
+            this.cruiserToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cruiserToolStripMenuItem.Text = "Cruiser";
+            // 
+            // battleshipToolStripMenuItem
+            // 
+            this.battleshipToolStripMenuItem.Name = "battleshipToolStripMenuItem";
+            this.battleshipToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.battleshipToolStripMenuItem.Text = "Battleship";
+            // 
+            // titanToolStripMenuItem
+            // 
+            this.titanToolStripMenuItem.Name = "titanToolStripMenuItem";
+            this.titanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.titanToolStripMenuItem.Text = "Titan";
             // 
             // Form1
             // 
@@ -327,6 +401,15 @@
         private System.Windows.Forms.Button buttonMoveRight;
         private System.Windows.Forms.Button buttonMoveDown;
         private System.Windows.Forms.ToolStripMenuItem MainMenuTechTree;
+        private System.Windows.Forms.ToolStripMenuItem dModelsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem planetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shipToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem frigateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem destroyerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cruiserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem battleshipToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem titanToolStripMenuItem;
     }
 }
 
