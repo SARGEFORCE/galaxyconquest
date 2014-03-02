@@ -303,6 +303,7 @@
             this.Name = "Form1";
             this.Text = "GalaxyConquest";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.galaxyImage)).EndInit();

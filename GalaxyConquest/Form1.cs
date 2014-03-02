@@ -18,6 +18,7 @@ namespace GalaxyConquest
         public float scaling = 1f;
         public int horizontal = 0;
         public int vertical = 0;
+        public float dynamicStarSize = 5; //Variable for dynamic of fix scale 
 
         public int mouseX;
         public int mouseY;
@@ -216,6 +217,10 @@ namespace GalaxyConquest
             else
             {
                 scaling += 0.2f;
+                if (dynamicStarSize > -2)
+                {
+                    dynamicStarSize -= 0.7f;
+                }
                 Redraw();
             }
         }
@@ -229,6 +234,10 @@ namespace GalaxyConquest
             else
             {
                 scaling -= 0.2f;
+                if (dynamicStarSize < 5)
+                {
+                    dynamicStarSize += 0.7f;
+                }
                 Redraw();
             }
         }
@@ -280,7 +289,7 @@ namespace GalaxyConquest
             centerX += horizontal;
             centerY += vertical;
 
-            int starSize = 0;
+            float starSize = 0;
 
             double screenX;
             double screenY;
@@ -298,7 +307,7 @@ namespace GalaxyConquest
                 screenX = tX;
                 screenY = tY;
 
-                starSize = s.type + 4;
+                starSize = s.type + dynamicStarSize;
                 
                 g.FillEllipse(s.br, centerX + (int)screenX - starSize / 2, centerY + (int)screenY - starSize / 2, starSize, starSize);
                 g.DrawString(s.name, new Font("Arial", 8.0F), Brushes.White, new PointF(centerX + (int)screenX, centerY + (int)screenY));
@@ -742,6 +751,11 @@ namespace GalaxyConquest
         {
             Form_3d pl = new Form_3d();
             pl.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
     }
