@@ -16,13 +16,13 @@ namespace GalaxyConquest
         public double spinY = 0.0;
 
         public float scaling = 1f;
-        public int horizontal = 0;
-        public int vertical = 0;
+        public int horizontal = 0;  //for moving galaxy
+        public int vertical = 0;    //for moving galaxy
         public float dynamicStarSize = 5; //Variable for dynamic of fix scale 
 
         public int mouseX;
         public int mouseY;
-
+        //Brushes for stars colors
         public SolidBrush BlueBrush = new SolidBrush(Color.FromArgb(255,123,104,238));
         public SolidBrush LightBlueBrush = new SolidBrush(Color.FromArgb(180,135,206,235));
         public SolidBrush WhiteBrush = new SolidBrush(Color.FromArgb(255,225,250,240));
@@ -42,7 +42,6 @@ namespace GalaxyConquest
             get
             {
                 return base.MinimumSize;
-               
             }
             set
             {
@@ -281,13 +280,13 @@ namespace GalaxyConquest
             g.FillRectangle(Brushes.Black, 0, 0, galaxyBitmap.Width, galaxyBitmap.Height);
             g.DrawString(galaxy.name, new Font("Arial", 10.0F), Brushes.White, new PointF(1.0F, 1.0F));
 
-            g.ScaleTransform(scaling, scaling);
+            g.ScaleTransform(scaling, scaling);//resize image(zooming in/out)
           
             float centerX = galaxyBitmap.Width / 2 / scaling;
             float centerY = galaxyBitmap.Height / 2 / scaling;
 
-            centerX += horizontal;
-            centerY += vertical;
+            centerX += horizontal;  //move galaxy left/right
+            centerY += vertical;    //move galaxy up/down
 
             float starSize = 0;
 
@@ -390,12 +389,12 @@ namespace GalaxyConquest
         {
             int next;
             Random rand = new Random();
-            for (int i = 0; i < galaxy.stars.Count/20; i++)
+            for (int i = 0; i < galaxy.stars.Count/20; i++) // (1/20) of all stars
             {
-                next = rand.Next(galaxy.stars.Count);
+                next = rand.Next(galaxy.stars.Count);       //random star from all stars
                 galaxy.stars[next].name = "super nova";
-                galaxy.stars[next].type = 8;
-                galaxy.stars[next].br = SuperWhiteBrush;
+                galaxy.stars[next].type = 8;                //type for "super nova"
+                galaxy.stars[next].br = SuperWhiteBrush;    //brush for "super nova"
             }
         }
 
@@ -403,12 +402,15 @@ namespace GalaxyConquest
         {
             Double x;
             Double y;
-            Double r;
-            Double t;
             Double z = 0;
-            Double curve = 0;
+            Double r;           //radius
+            Double t;           //space beetwen stars
+            Double curve = 0;   //statching spirals
             Random rand = new Random();
 
+            //we got 40 times for inner loop, so we need divide all stars coun for 40
+            //and we have 2 spirals, so divide agan dy 40
+            //as result (starscount/80)
             for (int j = 0; j < (starscount/80); j++)
             {
                 r = 0;
@@ -707,12 +709,14 @@ namespace GalaxyConquest
             //MessageBox.Show(galaxy.stars.Count.ToString(), "Draw Galaxy", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
+        //mouse down listener
         private void galaxyImage_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseX = e.X;
-            mouseY = e.Y;
+            mouseX = e.X;   //start x
+            mouseY = e.Y;   //start y
         }
 
+        //mouse move listener
         private void galaxyImage_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -735,8 +739,8 @@ namespace GalaxyConquest
                 {
                     vertical += 5;
                 }
-                mouseX = e.X;
-                mouseY = e.Y;
+                mouseX = e.X;   //set start x again
+                mouseY = e.Y;   //set start y again
                 Redraw();
             }
         }
