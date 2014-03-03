@@ -762,5 +762,53 @@ namespace GalaxyConquest
 
         }
 
+        private void galaxyImage_MouseClick(object sender, MouseEventArgs e)
+        {
+            planets pl = new planets();
+
+            for (int j = 0; j < galaxy.stars.Count; j++)
+            {
+                //all need to calculate the real x,y of star on the screen
+                //(s.x ~ 10 to 30) but the real position x on the screen is ~ 100 to 600
+                //--------------------------------------//
+                StarSystem s = galaxy.stars[j];
+
+                double screenX;
+                double screenY;
+                double tX, tY, tZ;
+                double starSize;
+
+                float centerX = galaxyBitmap.Width / 2 / scaling;
+                float centerY = galaxyBitmap.Height / 2 / scaling;
+
+                centerX += horizontal;  //move galaxy left/right
+                centerY += vertical;    //move galaxy up/down
+
+                tX = s.x * Math.Cos(spinX) - s.z * Math.Sin(spinX);
+                tZ = s.x * Math.Sin(spinX) + s.z * Math.Cos(spinX);
+                tY = s.y * Math.Cos(spinY) - tZ * Math.Sin(spinY);
+
+                screenX = tX;
+                screenY = tY;
+
+                starSize = s.type + dynamicStarSize;
+
+                //--------------------------------------//
+
+                //check for mouse in the star ellipce
+                if (e.X/scaling > (centerX + (int)screenX - starSize / 2) &&
+                    e.X/scaling < (centerX + (int)screenX + starSize / 2) &&
+                    e.Y/scaling > (centerY + (int)screenY - starSize / 2) &&
+                    e.Y/scaling < (centerY + (int)screenY + starSize / 2))
+                {
+                    //if mouse clicked in the ellipce open new form
+                    pl.ShowDialog();
+                    return;
+                }
+
+            }
+        }
+
+
     }
 }

@@ -78,7 +78,7 @@
             this.toolStripSeparator1,
             this.mainMenuQuit});
             this.mainMenuFile.Name = "mainMenuFile";
-            this.mainMenuFile.Size = new System.Drawing.Size(37, 20);
+            this.mainMenuFile.Size = new System.Drawing.Size(35, 20);
             this.mainMenuFile.Text = "File";
             // 
             // mainMenuNew
@@ -120,27 +120,27 @@
             this.mainMenuText.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenuAbout});
             this.mainMenuText.Name = "mainMenuText";
-            this.mainMenuText.Size = new System.Drawing.Size(44, 20);
+            this.mainMenuText.Size = new System.Drawing.Size(40, 20);
             this.mainMenuText.Text = "Help";
             // 
             // mainMenuAbout
             // 
             this.mainMenuAbout.Name = "mainMenuAbout";
-            this.mainMenuAbout.Size = new System.Drawing.Size(116, 22);
+            this.mainMenuAbout.Size = new System.Drawing.Size(115, 22);
             this.mainMenuAbout.Text = "About...";
             this.mainMenuAbout.Click += new System.EventHandler(this.mainMenuAbout_Click);
             // 
             // MainMenuTechTree
             // 
             this.MainMenuTechTree.Name = "MainMenuTechTree";
-            this.MainMenuTechTree.Size = new System.Drawing.Size(68, 20);
+            this.MainMenuTechTree.Size = new System.Drawing.Size(65, 20);
             this.MainMenuTechTree.Text = "Tech tree";
             this.MainMenuTechTree.Click += new System.EventHandler(this.MainMenuTechTree_Click);
             // 
             // dModelsToolStripMenuItem
             // 
             this.dModelsToolStripMenuItem.Name = "dModelsToolStripMenuItem";
-            this.dModelsToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.dModelsToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.dModelsToolStripMenuItem.Text = "3d models";
             this.dModelsToolStripMenuItem.Click += new System.EventHandler(this.dModelsToolStripMenuItem_Click);
             // 
@@ -268,15 +268,16 @@
             // 
             // galaxyImage
             // 
-            this.galaxyImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.galaxyImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.galaxyImage.BackColor = System.Drawing.Color.Black;
             this.galaxyImage.Location = new System.Drawing.Point(174, 27);
             this.galaxyImage.Name = "galaxyImage";
             this.galaxyImage.Size = new System.Drawing.Size(363, 265);
             this.galaxyImage.TabIndex = 1;
             this.galaxyImage.TabStop = false;
+            this.galaxyImage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseClick);
             this.galaxyImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseDown);
             this.galaxyImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.galaxyImage_MouseMove);
             // 
