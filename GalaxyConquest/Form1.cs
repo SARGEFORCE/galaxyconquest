@@ -216,9 +216,17 @@ namespace GalaxyConquest
             else
             {
                 scaling += 0.2f;
-                if (dynamicStarSize > -2)
+                if (dynamicStarSize >= 3)
                 {
-                    dynamicStarSize -= 0.7f;
+                    dynamicStarSize -= 0.4f;
+                }
+                else if (dynamicStarSize >= 2)
+                {
+                    dynamicStarSize -= 0.05f;
+                }
+                else if (dynamicStarSize >= 0)
+                {
+                    dynamicStarSize -= 0.01f;
                 }
                 Redraw();
             }
@@ -233,9 +241,17 @@ namespace GalaxyConquest
             else
             {
                 scaling -= 0.2f;
-                if (dynamicStarSize < 5)
+                if (dynamicStarSize <= 2)
                 {
-                    dynamicStarSize += 0.7f;
+                    dynamicStarSize += 0.01f;
+                }
+                else if (dynamicStarSize <= 3)
+                {
+                    dynamicStarSize += 0.05f;
+                }
+                else if (dynamicStarSize <= 5)
+                {
+                    dynamicStarSize += 0.4f;
                 }
                 Redraw();
             }
